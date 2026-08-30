@@ -6,7 +6,7 @@ window.COURSE_DATA = {
   title: "Technologies",
   term: "Winter 2026/7",
   instructor: "Jia Hui and Artemis",
-  currentWeek: 3,
+  currentWeek: 1,
   discussion: {
     tool: "E-learning",
     url: "https://moodle.example.edu/mod/forum/view.php?id=419",
