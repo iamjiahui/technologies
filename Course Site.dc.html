@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>54045. Technologies</title>
+<link rel="stylesheet" href="styles.css">
+<script src="course-data.js"></script>
+<style>
+  html, body { height: 100%; }
+  a { color: var(--color-accent-700); }
+  a:hover { color: var(--color-accent); }
+</style>
+</helmet>
+<div style="height:100vh;display:flex;flex-direction:column;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);overflow:hidden">
+
+  <header style="display:flex;align-items:stretch;background:#201e1d;color:#f3f2f2;flex:none">
+    <div style="width:52px;display:flex;align-items:center;justify-content:center;background:var(--color-accent);font-family:var(--font-heading);font-weight:800;font-size:15px;letter-spacing:.04em">AI</div>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:2px;padding:12px 20px">
+      <div style="font-family:var(--font-heading);font-weight:800;font-size:19px;line-height:1.1">{{ courseCode }} <span style="font-weight:400">{{ courseTitle }}</span></div>
+      <div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.6">{{ termLine }}</div>
+    </div>
+    <div style="display:flex;align-items:center;padding:0 22px;border-left:1px solid rgba(243,242,242,.25);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-family:var(--font-heading);font-weight:800">{{ weekOfLabel }}</div>
+  </header>
+
+  <nav style="display:flex;align-items:stretch;gap:0;border-bottom:2px solid var(--color-divider);background:var(--color-bg);flex:none;padding-left:8px">
+    <sc-for list="{{ tabs }}" as="tab" hint-placeholder-count="4">
+      <button onClick="{{ tab.go }}" style="border:0;cursor:pointer;background:{{ tab.bg }};color:{{ tab.fg }};font-family:var(--font-heading);font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:12px 18px" style-hover="opacity:.82">{{ tab.label }}</button>
+    </sc-for>
+    <a href="{{ forumUrl }}" target="_blank" style="margin-left:auto;display:flex;align-items:center;padding:0 18px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-family:var(--font-heading);font-weight:800;text-decoration:none;color:var(--color-accent-700)">Discussion on E-learning &rarr;</a>
+  </nav>
+
+  <div style="flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 320px">
+    <main style="min-width:0;overflow-y:auto;border-right:2px solid var(--color-divider)">
+
+      <sc-if value="{{ isCoursework }}" hint-placeholder-val="{{ true }}">
+        <div>
+          <div style="padding:22px 30px 40px">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+              <span class="tag tag-outline">{{ weekStateLabel }}</span>
+              <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700)">{{ weekMetaLabel }}</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:18px;margin-bottom:22px">
+              <div style="width:74px;height:74px;flex:none;background:var(--color-accent);color:var(--color-bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:800;font-size:42px;line-height:1">{{ weekNumber }}</div>
+              <h1 style="font-size:38px;margin:0;padding-top:4px;text-wrap:pretty">{{ weekTitle }}</h1>
+            </div>
+
+            <sc-if value="{{ hasNote }}" hint-placeholder-val="{{ true }}">
+              <p style="margin:0 0 22px;font-size:15px;line-height:1.6;white-space:pre-line;text-wrap:pretty;max-width:70ch">{{ weekNote }}</p>
+            </sc-if>
+
+            <sc-if value="{{ hasPrompt }}" hint-placeholder-val="{{ true }}">
+              <div style="border-top:2px solid var(--color-divider);border-bottom:2px solid var(--color-divider);padding:16px 0;margin-bottom:26px">
+                <div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700);font-family:var(--font-heading);font-weight:800;margin-bottom:8px">Discussion prompt</div>
+                <p style="margin:0;font-size:16px;font-style:italic;line-height:1.6;text-wrap:pretty;max-width:62ch">{{ weekPrompt }}</p>
+                <a href="{{ forumUrl }}" target="_blank" class="btn btn-secondary" style="margin-top:14px">Post on {{ forumTool }} &rarr;</a>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ hasReadings }}" hint-placeholder-val="{{ true }}">
+              <section style="margin-bottom:30px">
+                <h6 style="margin:0 0 6px">Readings</h6>
+                <sc-for list="{{ readings }}" as="r" hint-placeholder-count="3">
+                  <div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-top:1px solid var(--color-divider)">
+                    <div style="flex:1;min-width:0">
+                      <div style="font-size:15px;line-height:1.35;text-wrap:pretty">{{ r.title }}</div>
+                      <div style="font-size:12px;font-style:italic;color:var(--color-neutral-700)">{{ r.author }}</div>
+                    </div>
+                    <a href="{{ r.href }}" target="_blank" class="btn btn-secondary" style="flex:none">{{ r.cta }}</a>
+                  </div>
+                </sc-for>
+              </section>
+            </sc-if>
+
+            <sc-if value="{{ hasMaterials }}" hint-placeholder-val="{{ true }}">
+              <section style="margin-bottom:30px">
+                <h6 style="margin:0 0 6px">Materials</h6>
+                <sc-for list="{{ materials }}" as="m" hint-placeholder-count="2">
+                  <div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-top:1px solid var(--color-divider)">
+                    <span class="tag tag-accent" style="flex:none;font-family:var(--font-heading);font-weight:800;font-size:10px;letter-spacing:.08em;text-transform:uppercase">{{ m.kind }}</span>
+                    <div style="flex:1;min-width:0;font-size:15px">{{ m.name }}</div>
+                    <a href="{{ m.href }}" target="_blank" class="btn btn-secondary" style="flex:none">{{ m.cta }}</a>
+                  </div>
+                </sc-for>
+              </section>
+            </sc-if>
+
+            <sc-if value="{{ hasAssignment }}" hint-placeholder-val="{{ true }}">
+              <section style="border-top:2px solid var(--color-divider);padding-top:16px">
+                <h6 style="margin:0 0 10px">Assignment</h6>
+                <div style="display:flex;align-items:flex-start;gap:18px">
+                  <div style="flex:1;min-width:0">
+                    <div style="font-family:var(--font-heading);font-weight:800;font-size:20px;line-height:1.2;text-wrap:pretty">{{ assignmentTitle }}</div>
+                    <div style="font-size:13px;font-style:italic;color:var(--color-neutral-700);margin-top:4px">{{ assignmentNote }}</div>
+                  </div>
+                  <div style="flex:none;text-align:left">
+                    <div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-neutral-700)">Due</div>
+                    <div style="font-family:var(--font-heading);font-weight:800;font-size:18px">{{ assignmentDue }}</div>
+                  </div>
+                </div>
+              </section>
+            </sc-if>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isAssignments }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:26px 30px 40px;max-width:900px">
+          <h2 style="margin-bottom:14px">Assignments</h2>
+          <table class="table">
+            <thead>
+              <tr><th style="width:70px">Week</th><th>Title</th><th style="width:90px">Due</th><th style="width:120px">Brief</th></tr>
+            </thead>
+            <tbody>
+              <sc-for list="{{ assignmentRows }}" as="a" hint-placeholder-count="5">
+                <tr>
+                  <td style="font-family:var(--font-heading);font-weight:800">{{ a.week }}</td>
+                  <td>{{ a.title }}<div style="font-size:12px;font-style:italic;color:var(--color-neutral-700)">{{ a.note }}</div></td>
+                  <td style="white-space:nowrap">{{ a.due }}</td>
+                  <td><a href="{{ a.href }}" target="_blank" class="btn btn-secondary">{{ a.cta }}</a></td>
+                </tr>
+              </sc-for>
+            </tbody>
+          </table>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isGradebook }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:26px 30px 40px">
+          <h2 style="margin-bottom:4px">Submission tracker</h2>
+          <p style="font-size:13px;color:var(--color-neutral-700);max-width:62ch">Marks only: <strong>IN</strong> received, <strong>GR</strong> graded, <strong>LT</strong> late. No scores are published on this site.</p>
+          <div style="overflow-x:auto">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th style="min-width:180px">Student</th>
+                  <sc-for list="{{ trackerCols }}" as="c" hint-placeholder-count="4">
+                    <th style="min-width:110px">{{ c }}</th>
+                  </sc-for>
+                </tr>
+              </thead>
+              <tbody>
+                <sc-for list="{{ trackerRows }}" as="row" hint-placeholder-count="8">
+                  <tr>
+                    <td>{{ row.name }}</td>
+                    <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="4">
+                      <td style="font-family:var(--font-heading);font-weight:800;font-size:12px;color:{{ cell.color }}">{{ cell.mark }}</td>
+                    </sc-for>
+                  </tr>
+                </sc-for>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </sc-if>
+
+    </main>
+
+    <aside style="overflow-y:auto;background:var(--color-bg)">
+      <section style="border-bottom:2px solid var(--color-divider)">
+        <h6 style="margin:0;padding:12px 16px;background:var(--color-surface);border-bottom:1px solid var(--color-divider)">Important dates</h6>
+        <sc-for list="{{ upcoming }}" as="u" hint-placeholder-count="2">
+          <div style="display:flex;gap:14px;padding:14px 16px;border-bottom:1px solid var(--color-divider)">
+            <div style="flex:none;width:38px;text-align:center">
+              <div style="font-family:var(--font-heading);font-weight:800;font-size:22px;line-height:1">{{ u.day }}</div>
+              <div style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-700)">{{ u.mon }}</div>
+            </div>
+            <div style="flex:1;min-width:0">
+              <div style="font-family:var(--font-heading);font-weight:800;font-size:14px;line-height:1.25;text-wrap:pretty">{{ u.title }}</div>
+              <div style="font-size:11px;font-style:italic;color:var(--color-neutral-700);margin-top:3px">{{ u.note }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </section>
+      <section>
+        <h6 style="margin:0;padding:12px 16px;background:var(--color-surface);border-bottom:1px solid var(--color-divider)">Quick links</h6>
+        <sc-for list="{{ quickLinks }}" as="q" hint-placeholder-count="6">
+          <a href="{{ q.url }}" target="_blank" style="display:block;padding:11px 16px;border-bottom:1px solid var(--color-divider);font-size:14px;text-decoration:none;color:var(--color-text)" style-hover="background:var(--color-surface);color:var(--color-accent-700)">{{ q.label }}</a>
+        </sc-for>
+      </section>
+    </aside>
+  </div>
+
+  <footer style="flex:none;display:flex;align-items:stretch;border-top:2px solid var(--color-divider);background:var(--color-surface)">
+    <div style="display:flex;align-items:center;padding:0 16px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-family:var(--font-heading);font-weight:800;color:var(--color-neutral-700)">Jump to any week</div>
+    <div style="flex:1;display:grid;grid-template-columns:repeat(14,minmax(0,1fr));border-left:1px solid var(--color-divider)">
+      <sc-for list="{{ weekChips }}" as="w" hint-placeholder-count="14">
+        <button onClick="{{ w.go }}" style="border:0;border-right:1px solid var(--color-divider);cursor:pointer;padding:12px 0;background:{{ w.bg }};color:{{ w.fg }};font-family:var(--font-heading);font-weight:800;font-size:14px" style-hover="opacity:.8">{{ w.label }}</button>
+      </sc-for>
+    </div>
+  </footer>
+
+  <sc-if value="{{ editing }}" hint-placeholder-val="{{ false }}">
+    <div class="dialog-backdrop" style="align-items:stretch;justify-content:flex-end;padding:0">
+      <div style="width:min(560px,100%);height:100%;justify-self:end;align-self:stretch;overflow-y:auto;background:var(--color-bg);border-left:2px solid var(--color-divider);padding:22px 24px 40px">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
+          <h3 style="margin:0;flex:1">Editor — week {{ weekNumber }}</h3>
+          <button onClick="{{ closeEditor }}" class="btn btn-secondary">Close</button>
+        </div>
+        <p style="font-size:12px;color:var(--color-neutral-700)">Instructor only — nothing here is visible to students. Changes are kept in this browser; export and commit <code>course-data.js</code> to publish.</p>
+        <div style="display:flex;gap:8px;margin-bottom:18px">
+          <button onClick="{{ exportData }}" class="btn btn-primary">Export course-data.js</button>
+          <button onClick="{{ resetData }}" class="btn btn-secondary">Discard local edits</button>
+        </div>
+        <h6 style="margin:0 0 8px">Course</h6>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px">
+          <div class="field"><label>Course code</label><input class="input" value="{{ eCode }}" onChange="{{ setCode }}"></div>
+          <div class="field"><label>Course title</label><input class="input" value="{{ eCourseTitle }}" onChange="{{ setCourseTitle }}"></div>
+          <div class="field"><label>Semester / term</label><input class="input" value="{{ eTerm }}" onChange="{{ setTerm }}"></div>
+          <div class="field"><label>Instructor name</label><input class="input" value="{{ eInstructor }}" onChange="{{ setInstructor }}"></div>
+        </div>
+        <h6 style="margin:0 0 8px">Weeks</h6>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px">
+          <div class="field"><label>Number of weeks</label><input class="input" type="number" min="1" max="52" value="{{ eTotalWeeks }}" onChange="{{ setTotalWeeks }}"></div>
+          <div class="field"><label>Current week</label><input class="input" type="number" min="1" value="{{ eCurrentWeek }}" onChange="{{ setCurrentWeek }}"></div>
+        </div>
+        <h6 style="margin:0 0 8px">This week</h6>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">
+          <div class="field"><label>Button label at the bottom</label><input class="input" placeholder="defaults to the number" value="{{ eWeekLabel }}" onChange="{{ setWeekLabel }}"></div>
+          <label class="radio" style="align-self:end;padding-bottom:8px"><input type="checkbox" checked="{{ eWeekOff }}" onChange="{{ setWeekOff }}"><span class="dot"></span>No seminar (break)</label>
+        </div>
+        <div class="field" style="margin-bottom:12px"><label>Week title</label><input class="input" value="{{ eTitle }}" onChange="{{ setTitle }}"></div>
+        <div class="field" style="margin-bottom:12px"><label>Date label</label><input class="input" value="{{ eDate }}" onChange="{{ setDate }}"></div>
+        <div class="field" style="margin-bottom:12px"><label>Discussion prompt</label><textarea class="input" value="{{ ePrompt }}" onChange="{{ setPrompt }}"></textarea></div>
+        <div class="field" style="margin-bottom:12px"><label>Free text — presenters, notes, anything (line breaks kept)</label><textarea class="input" style="min-height:90px" value="{{ eNote }}" onChange="{{ setNote }}"></textarea></div>
+        <div class="field" style="margin-bottom:12px"><label>Readings — one per line: Title | Author | URL</label><textarea class="input" style="min-height:110px;font-family:ui-monospace,Menlo,monospace;font-size:12px" value="{{ eReadings }}" onChange="{{ setReadings }}"></textarea></div>
+        <div class="field" style="margin-bottom:12px"><label>Materials — one per line: Name | kind | path or URL</label><textarea class="input" style="min-height:90px;font-family:ui-monospace,Menlo,monospace;font-size:12px" value="{{ eMaterials }}" onChange="{{ setMaterials }}"></textarea></div>
+        <div class="field" style="margin-bottom:12px"><label>Assignment — Title | Due | Brief URL | Note (blank for none)</label><textarea class="input" style="min-height:70px;font-family:ui-monospace,Menlo,monospace;font-size:12px" value="{{ eAssignment }}" onChange="{{ setAssignment }}"></textarea></div>
+        <hr class="hr">
+        <h6 style="margin:0 0 8px">Right rail</h6>
+        <div class="field" style="margin-bottom:12px"><label>Important dates — one per line: Sep 11 | Title | Note</label><textarea class="input" style="min-height:150px;font-family:ui-monospace,Menlo,monospace;font-size:12px" value="{{ eDates }}" onChange="{{ setDates }}"></textarea></div>
+        <div class="field" style="margin-bottom:12px"><label>Quick links — one per line: Label | URL</label><textarea class="input" style="min-height:130px;font-family:ui-monospace,Menlo,monospace;font-size:12px" value="{{ eQuickLinks }}" onChange="{{ setQuickLinks }}"></textarea></div>
+        <div class="field" style="margin-bottom:12px"><label>Discussion tool | URL | note</label><textarea class="input" style="min-height:70px;font-family:ui-monospace,Menlo,monospace;font-size:12px" value="{{ eForum }}" onChange="{{ setForum }}"></textarea></div>
+        <div class="field"><label>Roster — one name per line</label><textarea class="input" style="min-height:150px;font-size:12px" value="{{ eStudents }}" onChange="{{ setStudents }}"></textarea></div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showEditHint }}" hint-placeholder-val="{{ false }}">
+    <button onClick="{{ openEditor }}" style="position:fixed;right:14px;bottom:62px;border:2px solid var(--color-divider);background:var(--color-bg);color:var(--color-text);font-family:var(--font-heading);font-weight:800;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;cursor:pointer">Edit mode</button>
+  </sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;courseCode&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;54045.&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Header&quot;}, &quot;courseTitle&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Technologies&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Header&quot;}, &quot;term&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Winter 2026/7&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Header&quot;}, &quot;instructor&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Jia Hui and Artemis&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Header&quot;}}">
+const KEY = "pls419.course.v1";
+
+class Component extends DCLogic {
+  state = { data: null, tab: "coursework", week: null, editing: false, editUnlocked: false };
+
+  componentDidMount() {
+    const base = (typeof window !== "undefined" && window.COURSE_DATA) || null;
+    let data = base ? JSON.parse(JSON.stringify(base)) : null;
+    try {
+      const saved = localStorage.getItem(KEY);
+      if (saved) data = JSON.parse(saved);
+    } catch (e) {}
+    const unlocked = /(^|[?&#])edit/.test(location.search + location.hash);
+    this.setState({ data, week: data ? data.currentWeek : 1, editUnlocked: unlocked });
+    this._onKey = (e) => {
+      if (e.key === "E" && e.shiftKey && !/input|textarea/i.test((e.target.tagName || ""))) {
+        this.setState((s) => ({ editUnlocked: true, editing: !s.editing }));
+      }
+      if (e.key === "Escape") this.setState({ editing: false });
+    };
+    window.addEventListener("keydown", this._onKey);
+  }
+  componentWillUnmount() { window.removeEventListener("keydown", this._onKey); }
+
+  save(mutate) {
+    this.setState((s) => {
+      const data = JSON.parse(JSON.stringify(s.data));
+      mutate(data);
+      try { localStorage.setItem(KEY, JSON.stringify(data)); } catch (e) {}
+      return { data };
+    });
+  }
+  editWeek(mutate) {
+    const n = this.state.week;
+    this.save((d) => { const w = d.weeks.find((x) => x.n === n); if (w) mutate(w); });
+  }
+
+  lines(v) { return String(v || "").split("\n").map((l) => l.trim()).filter(Boolean); }
+  parts(l) { return l.split("|").map((p) => p.trim()); }
+
+  renderVals() {
+    const p = this.props || {};
+    const d = this.state.data;
+    if (!d) return {
+      courseCode: p.courseCode || "54045.",
+      courseTitle: p.courseTitle || "Technologies",
+      termLine: (p.term || "Winter 2026/7") + " · with " + (p.instructor || "Jia Hui and Artemis"),
+      instructorName: p.instructor || "Jia Hui and Artemis",
+      isCoursework: false, isAssignments: false, isGradebook: false, editing: false, showEditHint: false
+    };
+    const code = p.courseCode || d.code;
+    const titleTxt = p.courseTitle || d.title;
+    const term = p.term || d.term;
+    const teacher = p.instructor || d.instructor;
+    const total = d.weeks.length;
+    const wn = this.state.week || d.currentWeek;
+    const w = d.weeks.find((x) => x.n === wn) || d.weeks[0];
+    const tab = this.state.tab;
+    const forum = d.discussion || {};
+
+    const tabDefs = [
+      ["coursework", "Coursework"],
+      ["assignments", "Assignments"],
+      ["gradebook", "Tracker"]
+    ];
+    const tabs = tabDefs.map(([id, label]) => ({
+      label,
+      bg: tab === id ? "var(--color-accent)" : "transparent",
+      fg: tab === id ? "var(--color-bg)" : "var(--color-text)",
+      go: () => this.setState({ tab: id })
+    }));
+
+    const weekChips = d.weeks.map((x) => ({
+      label: x.label || (x.off ? "—" : String(x.n)),
+      bg: x.n === wn ? "var(--color-accent)" : x.n === d.currentWeek ? "#201e1d" : "transparent",
+      fg: x.n === wn || x.n === d.currentWeek ? "var(--color-bg)" : "var(--color-text)",
+      go: () => this.setState({ week: x.n, tab: "coursework" })
+    }));
+
+    const readings = (w.readings || []).map((r) => ({
+      title: r.title, author: r.author,
+      href: r.url || forum.url || "#",
+      cta: r.url ? "Open" : "On " + (forum.tool || "E-learning")
+    }));
+    const materials = (w.materials || []).map((m) => ({
+      name: m.name, kind: m.kind || "file", href: m.url || "#",
+      cta: /^https?:/i.test(m.url || "") ? "Open" : "Download"
+    }));
+
+    const assignmentRows = d.weeks.filter((x) => x.assignment).map((x) => ({
+      week: String(x.n), title: x.assignment.title, note: x.assignment.note || "",
+      due: x.assignment.due || "TBC",
+      href: x.assignment.url || forum.url || "#",
+      cta: x.assignment.url ? "Open brief" : (forum.tool || "E-learning")
+    }));
+
+    const dateSource = (d.importantDates && d.importantDates.length)
+      ? d.importantDates
+      : assignmentRows.map((a) => ({ date: a.due, title: a.title, note: a.note }));
+    const upcoming = dateSource.map((x) => {
+      const bits = String(x.date || "").split(/\s+/);
+      const numFirst = /^\d/.test(bits[0] || "");
+      return {
+        day: numFirst ? bits[0] : (bits[1] || ""),
+        mon: (numFirst ? (bits[1] || "") : (bits[0] || "")).toUpperCase(),
+        title: x.title, note: x.note || ""
+      };
+    });
+
+    const marks = { in: ["IN", "var(--color-neutral-800)"], graded: ["GR", "var(--color-accent-700)"], late: ["LT", "var(--color-accent)"] };
+    const trackerCols = assignmentRows.map((a) => a.title);
+    const trackerRows = (d.students || []).map((name) => ({
+      name,
+      cells: trackerCols.map((t) => {
+        const st = ((d.tracker || {})[name] || {})[t];
+        const m = marks[st];
+        return { mark: m ? m[0] : "·", color: m ? m[1] : "var(--color-neutral-400)" };
+      })
+    }));
+
+    const noteText = typeof w.note === "string" ? w.note : (w.presenters || []).join(" · ");
+    const a = w.assignment || {};
+    const num = wn < 10 ? "0" + wn : String(wn);
+
+    return {
+      courseCode: code, courseTitle: titleTxt,
+      termLine: term + " · with " + teacher,
+      instructorName: teacher,
+      eTotalWeeks: String(total),
+      eCurrentWeek: String(d.currentWeek || 1),
+      eWeekLabel: w.label || "",
+      eWeekOff: !!w.off,
+      setTotalWeeks: (e) => {
+        const n = Math.max(1, Math.min(52, parseInt(e.target.value, 10) || 1));
+        this.save((x) => {
+          while (x.weeks.length > n) x.weeks.pop();
+          while (x.weeks.length < n) {
+            const next = x.weeks.length + 1;
+            x.weeks.push({ n: next, date: "", title: "Week " + next, prompt: "", presenters: [], readings: [], materials: [], assignment: null });
+          }
+          x.weeks.forEach((wk, i) => { wk.n = i + 1; });
+          if (x.currentWeek > n) x.currentWeek = n;
+        });
+        this.setState((s) => ({ week: Math.min(s.week, n) }));
+      },
+      setCurrentWeek: (e) => {
+        const n = Math.max(1, Math.min(total, parseInt(e.target.value, 10) || 1));
+        this.save((x) => { x.currentWeek = n; });
+      },
+      setWeekLabel: (e) => { const v = e.target.value; this.editWeek((x) => { x.label = v; }); },
+      setWeekOff: (e) => { const v = e.target.checked; this.editWeek((x) => { x.off = v; }); },
+      eCode: d.code || "", eCourseTitle: d.title || "", eTerm: d.term || "", eInstructor: d.instructor || "",
+      setCode: (e) => { const v = e.target.value; this.save((x) => { x.code = v; }); },
+      setCourseTitle: (e) => { const v = e.target.value; this.save((x) => { x.title = v; }); },
+      setTerm: (e) => { const v = e.target.value; this.save((x) => { x.term = v; }); },
+      setInstructor: (e) => { const v = e.target.value; this.save((x) => { x.instructor = v; }); },
+      weekOfLabel: "Week " + d.currentWeek + " of " + total,
+      tabs, weekChips,
+      isCoursework: tab === "coursework",
+      isAssignments: tab === "assignments", isGradebook: tab === "gradebook",
+
+      weekNumber: w.off ? "—" : String(w.n),
+      weekTitle: w.title,
+      weekMetaLabel: "Week " + w.n + " · " + w.date,
+      weekStateLabel: w.n === d.currentWeek ? "This week" : w.n < d.currentWeek ? "Archive" : "Previewing",
+      weekImagePath: "files/w" + num + ".jpg",
+      hasNote: !!noteText, weekNote: noteText,
+      hasPrompt: !!w.prompt, weekPrompt: w.prompt,
+      hasReadings: readings.length > 0, readings,
+      hasMaterials: materials.length > 0, materials,
+      hasAssignment: !!w.assignment,
+      assignmentTitle: a.title || "", assignmentNote: a.note || "", assignmentDue: a.due || "TBC",
+
+      forumTool: forum.tool || "the forum", forumUrl: forum.url || "#", forumNote: forum.note || "",
+      forumCta: "Discussion on " + (forum.tool || "the forum"),
+      quickLinks: d.quickLinks || [],
+      upcoming, assignmentRows, trackerCols, trackerRows,
+
+      editing: this.state.editing,
+      showEditHint: this.state.editUnlocked && !this.state.editing,
+      openEditor: () => this.setState({ editing: true }),
+      closeEditor: () => this.setState({ editing: false }),
+
+      eTitle: w.title || "", eDate: w.date || "", ePrompt: w.prompt || "",
+      eNote: noteText,
+      eReadings: (w.readings || []).map((r) => [r.title, r.author, r.url || ""].join(" | ")).join("\n"),
+      eMaterials: (w.materials || []).map((m) => [m.name, m.kind || "file", m.url || ""].join(" | ")).join("\n"),
+      eAssignment: w.assignment ? [a.title, a.due || "", a.url || "", a.note || ""].join(" | ") : "",
+      eDates: dateSource.map((x) => [x.date, x.title, x.note || ""].join(" | ")).join("\n"),
+      setDates: (e) => {
+        const rows = this.lines(e.target.value).map((l) => { const q = this.parts(l); return { date: q[0] || "", title: q[1] || "", note: q[2] || "" }; });
+        this.save((x) => { x.importantDates = rows; });
+      },
+      eQuickLinks: (d.quickLinks || []).map((q) => q.label + " | " + q.url).join("\n"),
+      eForum: [forum.tool || "", forum.url || "", forum.note || ""].join(" | "),
+      eStudents: (d.students || []).join("\n"),
+
+      setTitle: (e) => { const v = e.target.value; this.editWeek((x) => { x.title = v; }); },
+      setDate: (e) => { const v = e.target.value; this.editWeek((x) => { x.date = v; }); },
+      setPrompt: (e) => { const v = e.target.value; this.editWeek((x) => { x.prompt = v; }); },
+      setNote: (e) => { const v = e.target.value; this.editWeek((x) => { x.note = v; }); },
+      setReadings: (e) => {
+        const rows = this.lines(e.target.value).map((l) => { const p = this.parts(l); return { title: p[0] || "", author: p[1] || "", url: p[2] || "" }; });
+        this.editWeek((x) => { x.readings = rows; });
+      },
+      setMaterials: (e) => {
+        const rows = this.lines(e.target.value).map((l) => { const p = this.parts(l); return { name: p[0] || "", kind: p[1] || "file", url: p[2] || "" }; });
+        this.editWeek((x) => { x.materials = rows; });
+      },
+      setAssignment: (e) => {
+        const v = e.target.value.trim();
+        const p = this.parts(v);
+        this.editWeek((x) => { x.assignment = v ? { title: p[0] || "", due: p[1] || "", url: p[2] || "", note: p[3] || "" } : null; });
+      },
+      setQuickLinks: (e) => {
+        const rows = this.lines(e.target.value).map((l) => { const p = this.parts(l); return { label: p[0] || "", url: p[1] || "" }; });
+        this.save((x) => { x.quickLinks = rows; });
+      },
+      setForum: (e) => {
+        const p = this.parts(e.target.value);
+        this.save((x) => { x.discussion = { tool: p[0] || "", url: p[1] || "", note: p[2] || "" }; });
+      },
+      setStudents: (e) => {
+        const rows = this.lines(e.target.value);
+        this.save((x) => { x.students = rows; });
+      },
+      exportData: () => {
+        const body = "/* course-data.js — exported from the site editor. Commit this file. */\nwindow.COURSE_DATA = " + JSON.stringify(this.state.data, null, 2) + ";\n";
+        const url = URL.createObjectURL(new Blob([body], { type: "text/javascript" }));
+        const link = document.createElement("a");
+        link.href = url; link.download = "course-data.js";
+        document.body.appendChild(link); link.click(); link.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 2000);
+      },
+      resetData: () => {
+        try { localStorage.removeItem(KEY); } catch (err) {}
+        const base = JSON.parse(JSON.stringify(window.COURSE_DATA));
+        this.setState({ data: base, week: base.currentWeek });
+      }
+    };
+  }
+}
+
+</script>
+</body>
+</html>
