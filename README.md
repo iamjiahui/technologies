@@ -1,4 +1,4 @@
-# PLS 419 / 519 — AI & Social Science
+# 54045. Technologies
 
 A self-contained course site. No server, no build step, no database: three files and a folder.
 
