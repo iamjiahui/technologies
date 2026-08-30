@@ -15,7 +15,7 @@ A self-contained course site. No server, no build step, no database: three files
 
 ## Adding materials each week
 
-**In the browser (easiest).** Open the site, press `Shift+E` (or add `?edit` to the URL). The editor panel edits the selected week — title, date, prompt, presenters, readings, materials, assignment — plus quick links, the discussion link and the roster. Edits live in your browser only. When you're done, click **Export course-data.js** and commit the downloaded file over the existing one. Students never see the editor.
+**In the browser (easiest).** Open the site, press `Shift+E` (or add `?edit` to the URL). The editor panel edits the selected week — title, date, prompt, presenters, readings, materials, assignment — plus quick links and the discussion link. Edits live in your browser only. When you're done, click **Export course-data.js** and commit the downloaded file over the existing one. Students never see the editor.
 
 Course code, title, semester and instructor name are edited at the top of the editor panel (or in `course-data.js` → `code` / `title` / `term` / `instructor`).
 
@@ -27,6 +27,3 @@ Course code, title, semester and instructor name are edited at the top of the ed
 
 All threaded discussion happens on the external tool set in `course-data.js` → `discussion` (E-learning by default). The Discussions tab shows every week's prompt and links out; nothing is posted or stored here.
 
-## Tracker
-
-The Tracker tab shows submission marks only — `IN` received, `GR` graded, `LT` late — never scores. Statuses live in `course-data.js` → `tracker`. Anything in this file is public once pushed, so keep it to marks.

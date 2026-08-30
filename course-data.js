@@ -30,13 +30,6 @@ window.COURSE_DATA = {
     { label: "Op-Ed Papers Selection", url: "files/oped-papers.pdf" },
     { label: "Sample Final Project", url: "files/sample-final.pdf" }
   ],
-  students: [
-    "Aidana Yerkin", "Bagzhan Alimkhan", "Zhangir Zhangozhin", "Moldir Auyelkhan",
-    "Zarema Nurbayeva", "Dilnaz Mukhtarkhanova", "Alisher Sagyndyk", "Kamila Zhaksybek",
-    "Nurdaulet Serik", "Aigerim Bekova", "Timur Orazaly", "Saltanat Kairat",
-    "Yerassyl Toleu", "Madina Abenova", "Dias Kuanysh", "Ainur Zhumagul",
-    "Arman Dosbol", "Laura Seitkali", "Bekzat Amanzhol", "Gaukhar Rysbek"
-  ],
   weeks: [
     {
       n: 1, date: "Sep 1", title: "What Counts as Intelligence?",
@@ -52,7 +45,7 @@ window.COURSE_DATA = {
     {
       n: 2, date: "Sep 8", title: "Machines That Predict People",
       prompt: "Prediction is not explanation. Where does that distinction bite hardest in social science?",
-      presenters: ["Aidana Yerkin", "Alisher Sagyndyk"],
+      presenters: [],
       readings: [
         { title: "Prediction Policy Problems", author: "Kleinberg et al. (2015)", url: "" },
         { title: "To Explain or to Predict?", author: "Shmueli (2010)", url: "" }
@@ -63,7 +56,7 @@ window.COURSE_DATA = {
     {
       n: 3, date: "Sep 15", title: "Could It Be Conscious?",
       prompt: "The hard question from three angles: the case for taking it seriously, the reason we may never be able to settle it, and the classic account of why experience resists outside description.",
-      presenters: ["Aidana Yerkin", "Bagzhan Alimkhan", "Zhangir Zhangozhin", "Moldir Auyelkhan", "Zarema Nurbayeva", "Dilnaz Mukhtarkhanova"],
+      presenters: [],
       readings: [
         { title: "Could a large language model be conscious?", author: "Chalmers (2023)", url: "https://arxiv.org/abs/2303.07103" },
         { title: "The Edge of Sentience — read Ch. 16, Large Language Models and the Gaming Problem", author: "Birch (2024)", url: "" },
@@ -78,7 +71,7 @@ window.COURSE_DATA = {
     {
       n: 4, date: "Sep 22", title: "Bias Is Not a Bug Report",
       prompt: "If a model reproduces a society's inequalities faithfully, is it broken?",
-      presenters: ["Kamila Zhaksybek", "Nurdaulet Serik"],
+      presenters: [],
       readings: [
         { title: "Machine Bias", author: "Angwin et al. (2016)", url: "" },
         { title: "Fairness and Abstraction in Sociotechnical Systems", author: "Selbst et al. (2019)", url: "" }
@@ -88,21 +81,21 @@ window.COURSE_DATA = {
     {
       n: 5, date: "Sep 29", title: "Labour Behind the Curtain",
       prompt: "Who does the invisible work that makes automation look automatic?",
-      presenters: ["Aigerim Bekova", "Timur Orazaly"],
+      presenters: [],
       readings: [{ title: "Ghost Work — Introduction & Ch. 1", author: "Gray & Suri (2019)", url: "" }],
       materials: [], assignment: null
     },
     {
       n: 6, date: "Oct 6", title: "Simulated Subjects",
       prompt: "Can a language model stand in for a survey respondent? Argue the strongest version of both answers.",
-      presenters: ["Saltanat Kairat", "Yerassyl Toleu"],
+      presenters: [],
       readings: [{ title: "Out of One, Many: Using Language Models to Simulate Human Samples", author: "Argyle et al. (2023)", url: "" }],
       materials: [], assignment: { title: "Research design memo", due: "Oct 9", url: "", note: "2 pages, no AI assistance." }
     },
     {
       n: 7, date: "Oct 13", title: "Measurement in the Age of Text",
       prompt: "What becomes measurable that was not before, and what quietly stops being measured?",
-      presenters: ["Madina Abenova", "Dias Kuanysh"],
+      presenters: [],
       readings: [{ title: "Text as Data", author: "Grimmer & Stewart (2013)", url: "" }],
       materials: [], assignment: null
     },
@@ -113,51 +106,42 @@ window.COURSE_DATA = {
     {
       n: 9, date: "Oct 27", title: "Governance Without Consensus",
       prompt: "Regulation is being written faster than the evidence base. What should a social scientist contribute?",
-      presenters: ["Ainur Zhumagul", "Arman Dosbol"],
+      presenters: [],
       readings: [{ title: "The EU AI Act — Titles I\u2013III (skim)", author: "European Parliament (2024)", url: "" }],
       materials: [], assignment: { title: "Op-Ed #2 due", due: "Oct 30", url: "", note: "Submit on E-learning with your AI Process Log." }
     },
     {
       n: 10, date: "Nov 3", title: "Persuasion at Scale",
       prompt: "If persuasion becomes cheap and personalised, what happens to public argument?",
-      presenters: ["Laura Seitkali", "Bekzat Amanzhol"],
+      presenters: [],
       readings: [{ title: "On the Conversational Persuasiveness of LLMs", author: "Salvi et al. (2024)", url: "" }],
       materials: [], assignment: null
     },
     {
       n: 11, date: "Nov 10", title: "Work, Skill and the Middle",
       prompt: "Which tasks are being hollowed out here, in this city, this year?",
-      presenters: ["Gaukhar Rysbek", "Aidana Yerkin"],
+      presenters: [],
       readings: [{ title: "Experimental Evidence on the Productivity Effects of Generative AI", author: "Noy & Zhang (2023)", url: "" }],
       materials: [], assignment: null
     },
     {
       n: 12, date: "Nov 17", title: "Field Methods with a Machine in the Room",
       prompt: "Bring one method from your own project and stress-test it.",
-      presenters: ["Bagzhan Alimkhan", "Kamila Zhaksybek"],
+      presenters: [],
       readings: [], materials: [], assignment: { title: "Final project proposal", due: "Nov 20", url: "", note: "One page + reading list." }
     },
     {
       n: 13, date: "Nov 24", title: "Student Symposium I",
       prompt: "Six presentations, twelve minutes each, hard stop.",
-      presenters: ["Zhangir Zhangozhin", "Moldir Auyelkhan", "Zarema Nurbayeva"],
+      presenters: [],
       readings: [], materials: [], assignment: null
     },
     {
       n: 14, date: "Dec 1", title: "Student Symposium II & Close",
       prompt: "Remaining presentations, then what we would teach differently next year.",
-      presenters: ["Dilnaz Mukhtarkhanova", "Alisher Sagyndyk", "Nurdaulet Serik"],
+      presenters: [],
       readings: [], materials: [],
       assignment: { title: "Final project", due: "Dec 12", url: "", note: "Paper or op-ed portfolio + process log." }
     }
-  ],
-  /* Submission tracker: "student name": { "assignment title": "in" | "graded" | "late" } */
-  tracker: {
-    "Aidana Yerkin": { "Op-Ed #1 — What Is This Thing?": "graded" },
-    "Bagzhan Alimkhan": { "Op-Ed #1 — What Is This Thing?": "graded" },
-    "Zhangir Zhangozhin": { "Op-Ed #1 — What Is This Thing?": "in" },
-    "Moldir Auyelkhan": { "Op-Ed #1 — What Is This Thing?": "late" },
-    "Zarema Nurbayeva": { "Op-Ed #1 — What Is This Thing?": "graded" },
-    "Dilnaz Mukhtarkhanova": { "Op-Ed #1 — What Is This Thing?": "in" }
-  }
+  ]
 };

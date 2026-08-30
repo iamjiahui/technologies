@@ -131,35 +131,6 @@
         </div>
       </sc-if>
 
-      <sc-if value="{{ isGradebook }}" hint-placeholder-val="{{ false }}">
-        <div style="padding:26px 30px 40px">
-          <h2 style="margin-bottom:4px">Submission tracker</h2>
-          <p style="font-size:13px;color:var(--color-neutral-700);max-width:62ch">Marks only: <strong>IN</strong> received, <strong>GR</strong> graded, <strong>LT</strong> late. No scores are published on this site.</p>
-          <div style="overflow-x:auto">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th style="min-width:180px">Student</th>
-                  <sc-for list="{{ trackerCols }}" as="c" hint-placeholder-count="4">
-                    <th style="min-width:110px">{{ c }}</th>
-                  </sc-for>
-                </tr>
-              </thead>
-              <tbody>
-                <sc-for list="{{ trackerRows }}" as="row" hint-placeholder-count="8">
-                  <tr>
-                    <td>{{ row.name }}</td>
-                    <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="4">
-                      <td style="font-family:var(--font-heading);font-weight:800;font-size:12px;color:{{ cell.color }}">{{ cell.mark }}</td>
-                    </sc-for>
-                  </tr>
-                </sc-for>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </sc-if>
-
     </main>
 
     <aside style="overflow-y:auto;background:var(--color-bg)">
@@ -237,7 +208,6 @@
         <div class="field" style="margin-bottom:12px"><label>Important dates — one per line: Sep 11 | Title | Note</label><textarea class="input" style="min-height:150px;font-family:ui-monospace,Menlo,monospace;font-size:12px" value="{{ eDates }}" onChange="{{ setDates }}"></textarea></div>
         <div class="field" style="margin-bottom:12px"><label>Quick links — one per line: Label | URL</label><textarea class="input" style="min-height:130px;font-family:ui-monospace,Menlo,monospace;font-size:12px" value="{{ eQuickLinks }}" onChange="{{ setQuickLinks }}"></textarea></div>
         <div class="field" style="margin-bottom:12px"><label>Discussion tool | URL | note</label><textarea class="input" style="min-height:70px;font-family:ui-monospace,Menlo,monospace;font-size:12px" value="{{ eForum }}" onChange="{{ setForum }}"></textarea></div>
-        <div class="field"><label>Roster — one name per line</label><textarea class="input" style="min-height:150px;font-size:12px" value="{{ eStudents }}" onChange="{{ setStudents }}"></textarea></div>
       </div>
     </div>
   </sc-if>
@@ -297,7 +267,7 @@ class Component extends DCLogic {
       courseTitle: p.courseTitle || "Technologies",
       termLine: (p.term || "Winter 2026/7") + " · with " + (p.instructor || "Jia Hui and Artemis"),
       instructorName: p.instructor || "Jia Hui and Artemis",
-      isCoursework: false, isAssignments: false, isGradebook: false, editing: false, showEditHint: false
+      isCoursework: false, isAssignments: false, editing: false, showEditHint: false
     };
     const code = p.courseCode || d.code;
     const titleTxt = p.courseTitle || d.title;
@@ -311,8 +281,7 @@ class Component extends DCLogic {
 
     const tabDefs = [
       ["coursework", "Coursework"],
-      ["assignments", "Assignments"],
-      ["gradebook", "Tracker"]
+      ["assignments", "Assignments"]
     ];
     const tabs = tabDefs.map(([id, label]) => ({
       label,
@@ -358,17 +327,6 @@ class Component extends DCLogic {
       };
     });
 
-    const marks = { in: ["IN", "var(--color-neutral-800)"], graded: ["GR", "var(--color-accent-700)"], late: ["LT", "var(--color-accent)"] };
-    const trackerCols = assignmentRows.map((a) => a.title);
-    const trackerRows = (d.students || []).map((name) => ({
-      name,
-      cells: trackerCols.map((t) => {
-        const st = ((d.tracker || {})[name] || {})[t];
-        const m = marks[st];
-        return { mark: m ? m[0] : "·", color: m ? m[1] : "var(--color-neutral-400)" };
-      })
-    }));
-
     const noteText = typeof w.note === "string" ? w.note : (w.presenters || []).join(" · ");
     const a = w.assignment || {};
     const num = wn < 10 ? "0" + wn : String(wn);
@@ -407,8 +365,7 @@ class Component extends DCLogic {
       setInstructor: (e) => { const v = e.target.value; this.save((x) => { x.instructor = v; }); },
       weekOfLabel: "Week " + d.currentWeek + " of " + total,
       tabs, weekChips,
-      isCoursework: tab === "coursework",
-      isAssignments: tab === "assignments", isGradebook: tab === "gradebook",
+      isCoursework: tab === "coursework", isAssignments: tab === "assignments",
 
       weekNumber: w.off ? "—" : String(w.n),
       weekTitle: w.title,
@@ -425,7 +382,7 @@ class Component extends DCLogic {
       forumTool: forum.tool || "the forum", forumUrl: forum.url || "#", forumNote: forum.note || "",
       forumCta: "Discussion on " + (forum.tool || "the forum"),
       quickLinks: d.quickLinks || [],
-      upcoming, assignmentRows, trackerCols, trackerRows,
+      upcoming, assignmentRows,
 
       editing: this.state.editing,
       showEditHint: this.state.editUnlocked && !this.state.editing,
@@ -444,7 +401,6 @@ class Component extends DCLogic {
       },
       eQuickLinks: (d.quickLinks || []).map((q) => q.label + " | " + q.url).join("\n"),
       eForum: [forum.tool || "", forum.url || "", forum.note || ""].join(" | "),
-      eStudents: (d.students || []).join("\n"),
 
       setTitle: (e) => { const v = e.target.value; this.editWeek((x) => { x.title = v; }); },
       setDate: (e) => { const v = e.target.value; this.editWeek((x) => { x.date = v; }); },
@@ -470,10 +426,6 @@ class Component extends DCLogic {
       setForum: (e) => {
         const p = this.parts(e.target.value);
         this.save((x) => { x.discussion = { tool: p[0] || "", url: p[1] || "", note: p[2] || "" }; });
-      },
-      setStudents: (e) => {
-        const rows = this.lines(e.target.value);
-        this.save((x) => { x.students = rows; });
       },
       exportData: () => {
         const body = "/* course-data.js — exported from the site editor. Commit this file. */\nwindow.COURSE_DATA = " + JSON.stringify(this.state.data, null, 2) + ";\n";
