@@ -39,6 +39,8 @@ window.COURSE_DATA = {
         { title: "Computing Machinery and Intelligence", author: "Turing (1950)", url: "https://academic.oup.com/mind/article/LIX/236/433/986238" },
         { title: "Minds, Brains, and Programs", author: "Searle (1980)", url: "" }
       ],
+      /* extraReadings — optional, shown under "Additional readings". Same shape as readings. */
+      extraReadings: [],
       materials: [{ name: "Week 1 slides", kind: "slides", url: "files/w01-slides.pdf" }],
       assignment: null
     },
@@ -50,6 +52,7 @@ window.COURSE_DATA = {
         { title: "Prediction Policy Problems", author: "Kleinberg et al. (2015)", url: "" },
         { title: "To Explain or to Predict?", author: "Shmueli (2010)", url: "" }
       ],
+      extraReadings: [],
       materials: [{ name: "Week 2 slides", kind: "slides", url: "files/w02-slides.pdf" }],
       assignment: { title: "Op-Ed #1 — What Is This Thing?", due: "Sep 11", url: "files/oped1-brief.pdf", note: "Op-ed + AI Process Log — publish on The Observatory if you choose" }
     },
@@ -62,6 +65,7 @@ window.COURSE_DATA = {
         { title: "The Edge of Sentience — read Ch. 16, Large Language Models and the Gaming Problem", author: "Birch (2024)", url: "" },
         { title: "What is it like to be a bat?", author: "Nagel (1974)", url: "" }
       ],
+      extraReadings: [],
       materials: [
         { name: "Week 3 slides", kind: "slides", url: "files/w03-slides.pdf" },
         { name: "Seminar handout — three angles", kind: "handout", url: "files/w03-handout.pdf" }

@@ -13,42 +13,43 @@
 <link rel="stylesheet" href="styles.css">
 <script src="course-data.js"></script>
 <style>
-  html, body { height: 100%; }
+  html, body { min-height: 100%; overflow-x: hidden; }
+  body { -webkit-text-size-adjust: 100%; }
   a { color: var(--color-accent-700); }
   a:hover { color: var(--color-accent); }
 </style>
 </helmet>
-<div style="height:100vh;display:flex;flex-direction:column;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);overflow:hidden">
+<div style="min-height:100vh;display:flex;flex-direction:column;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body)">
 
-  <header style="display:flex;align-items:stretch;background:#201e1d;color:#f3f2f2;flex:none">
-    <div style="width:52px;display:flex;align-items:center;justify-content:center;background:var(--color-accent);font-family:var(--font-heading);font-weight:800;font-size:15px;letter-spacing:.04em">AI</div>
-    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:2px;padding:12px 20px">
-      <div style="font-family:var(--font-heading);font-weight:800;font-size:19px;line-height:1.1">{{ courseCode }} <span style="font-weight:400">{{ courseTitle }}</span></div>
+  <header style="display:flex;flex-wrap:wrap;align-items:stretch;background:#201e1d;color:#f3f2f2;flex:none;position:sticky;top:0;z-index:5">
+    <div style="width:52px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--color-accent);font-family:var(--font-heading);font-weight:800;font-size:15px;letter-spacing:.04em">AI</div>
+    <div style="flex:1 1 200px;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:2px;padding:12px clamp(14px,3vw,20px)">
+      <div style="font-family:var(--font-heading);font-weight:800;font-size:clamp(16px,4vw,19px);line-height:1.1;text-wrap:balance">{{ courseCode }} <span style="font-weight:400">{{ courseTitle }}</span></div>
       <div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.6">{{ termLine }}</div>
     </div>
-    <div style="display:flex;align-items:center;padding:0 22px;border-left:1px solid rgba(243,242,242,.25);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-family:var(--font-heading);font-weight:800">{{ weekOfLabel }}</div>
+    <div style="display:flex;align-items:center;padding:8px clamp(14px,3vw,22px);border-left:1px solid rgba(243,242,242,.25);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-family:var(--font-heading);font-weight:800;white-space:nowrap">{{ weekOfLabel }}</div>
   </header>
 
-  <nav style="display:flex;align-items:stretch;gap:0;border-bottom:2px solid var(--color-divider);background:var(--color-bg);flex:none;padding-left:8px">
+  <nav style="display:flex;flex-wrap:wrap;align-items:stretch;gap:0;border-bottom:2px solid var(--color-divider);background:var(--color-bg);flex:none;padding-left:8px">
     <sc-for list="{{ tabs }}" as="tab" hint-placeholder-count="4">
-      <button onClick="{{ tab.go }}" style="border:0;cursor:pointer;background:{{ tab.bg }};color:{{ tab.fg }};font-family:var(--font-heading);font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:12px 18px" style-hover="opacity:.82">{{ tab.label }}</button>
+      <button onClick="{{ tab.go }}" style="border:0;cursor:pointer;background:{{ tab.bg }};color:{{ tab.fg }};font-family:var(--font-heading);font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:14px 18px;min-height:44px" style-hover="opacity:.82">{{ tab.label }}</button>
     </sc-for>
-    <a href="{{ forumUrl }}" target="_blank" style="margin-left:auto;display:flex;align-items:center;padding:0 18px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-family:var(--font-heading);font-weight:800;text-decoration:none;color:var(--color-accent-700)">Discussion on E-learning &rarr;</a>
+    <a href="{{ forumUrl }}" target="_blank" style="margin-left:auto;display:flex;align-items:center;padding:10px 18px;min-height:44px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-family:var(--font-heading);font-weight:800;text-decoration:none;color:var(--color-accent-700)">Discussion on E-learning &rarr;</a>
   </nav>
 
-  <div style="flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 320px">
-    <main style="min-width:0;overflow-y:auto;border-right:2px solid var(--color-divider)">
+  <div style="flex:1;display:flex;flex-wrap:wrap;align-items:stretch">
+    <main style="flex:1 1 420px;min-width:0">
 
       <sc-if value="{{ isCoursework }}" hint-placeholder-val="{{ true }}">
         <div>
-          <div style="padding:22px 30px 40px">
+          <div style="padding:22px clamp(16px,4vw,30px) 40px">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
               <span class="tag tag-outline">{{ weekStateLabel }}</span>
               <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700)">{{ weekMetaLabel }}</span>
             </div>
             <div style="display:flex;align-items:flex-start;gap:18px;margin-bottom:22px">
-              <div style="width:74px;height:74px;flex:none;background:var(--color-accent);color:var(--color-bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:800;font-size:42px;line-height:1">{{ weekNumber }}</div>
-              <h1 style="font-size:38px;margin:0;padding-top:4px;text-wrap:pretty">{{ weekTitle }}</h1>
+              <div style="width:clamp(56px,14vw,74px);height:clamp(56px,14vw,74px);flex:none;background:var(--color-accent);color:var(--color-bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:800;font-size:clamp(30px,8vw,42px);line-height:1">{{ weekNumber }}</div>
+              <h1 style="font-size:clamp(25px,6.5vw,38px);margin:0;padding-top:4px;text-wrap:pretty">{{ weekTitle }}</h1>
             </div>
 
             <sc-if value="{{ hasNote }}" hint-placeholder-val="{{ true }}">
@@ -67,8 +68,23 @@
               <section style="margin-bottom:30px">
                 <h6 style="margin:0 0 6px">Readings</h6>
                 <sc-for list="{{ readings }}" as="r" hint-placeholder-count="3">
-                  <div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-top:1px solid var(--color-divider)">
-                    <div style="flex:1;min-width:0">
+                  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;padding:14px 0;border-top:1px solid var(--color-divider)">
+                    <div style="flex:1 1 220px;min-width:0">
+                      <div style="font-size:15px;line-height:1.35;text-wrap:pretty">{{ r.title }}</div>
+                      <div style="font-size:12px;font-style:italic;color:var(--color-neutral-700)">{{ r.author }}</div>
+                    </div>
+                    <a href="{{ r.href }}" target="_blank" class="btn btn-secondary" style="flex:none">{{ r.cta }}</a>
+                  </div>
+                </sc-for>
+              </section>
+            </sc-if>
+
+            <sc-if value="{{ hasExtraReadings }}" hint-placeholder-val="{{ false }}">
+              <section style="margin-bottom:30px">
+                <h6 style="margin:0 0 6px">Additional readings</h6>
+                <sc-for list="{{ extraReadings }}" as="r" hint-placeholder-count="2">
+                  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;padding:14px 0;border-top:1px solid var(--color-divider)">
+                    <div style="flex:1 1 220px;min-width:0">
                       <div style="font-size:15px;line-height:1.35;text-wrap:pretty">{{ r.title }}</div>
                       <div style="font-size:12px;font-style:italic;color:var(--color-neutral-700)">{{ r.author }}</div>
                     </div>
@@ -82,9 +98,9 @@
               <section style="margin-bottom:30px">
                 <h6 style="margin:0 0 6px">Materials</h6>
                 <sc-for list="{{ materials }}" as="m" hint-placeholder-count="2">
-                  <div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-top:1px solid var(--color-divider)">
+                  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;padding:14px 0;border-top:1px solid var(--color-divider)">
                     <span class="tag tag-accent" style="flex:none;font-family:var(--font-heading);font-weight:800;font-size:10px;letter-spacing:.08em;text-transform:uppercase">{{ m.kind }}</span>
-                    <div style="flex:1;min-width:0;font-size:15px">{{ m.name }}</div>
+                    <div style="flex:1 1 180px;min-width:0;font-size:15px">{{ m.name }}</div>
                     <a href="{{ m.href }}" target="_blank" class="btn btn-secondary" style="flex:none">{{ m.cta }}</a>
                   </div>
                 </sc-for>
@@ -94,8 +110,8 @@
             <sc-if value="{{ hasAssignment }}" hint-placeholder-val="{{ true }}">
               <section style="border-top:2px solid var(--color-divider);padding-top:16px">
                 <h6 style="margin:0 0 10px">Assignment</h6>
-                <div style="display:flex;align-items:flex-start;gap:18px">
-                  <div style="flex:1;min-width:0">
+                <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:14px 18px">
+                  <div style="flex:1 1 220px;min-width:0">
                     <div style="font-family:var(--font-heading);font-weight:800;font-size:20px;line-height:1.2;text-wrap:pretty">{{ assignmentTitle }}</div>
                     <div style="font-size:13px;font-style:italic;color:var(--color-neutral-700);margin-top:4px">{{ assignmentNote }}</div>
                   </div>
@@ -111,9 +127,10 @@
       </sc-if>
 
       <sc-if value="{{ isAssignments }}" hint-placeholder-val="{{ false }}">
-        <div style="padding:26px 30px 40px;max-width:900px">
-          <h2 style="margin-bottom:14px">Assignments</h2>
-          <table class="table">
+        <div style="padding:26px clamp(16px,4vw,30px) 40px;max-width:900px">
+          <h2 style="margin-bottom:14px;font-size:clamp(24px,6vw,34px)">Assignments</h2>
+          <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+          <table class="table" style="min-width:520px">
             <thead>
               <tr><th style="width:70px">Week</th><th>Title</th><th style="width:90px">Due</th><th style="width:120px">Brief</th></tr>
             </thead>
@@ -128,12 +145,13 @@
               </sc-for>
             </tbody>
           </table>
+          </div>
         </div>
       </sc-if>
 
     </main>
 
-    <aside style="overflow-y:auto;background:var(--color-bg)">
+    <aside style="flex:1 1 320px;max-width:360px;min-width:0;background:var(--color-bg);border-left:2px solid var(--color-divider);border-top:2px solid var(--color-divider)">
       <section style="border-bottom:2px solid var(--color-divider)">
         <h6 style="margin:0;padding:12px 16px;background:var(--color-surface);border-bottom:1px solid var(--color-divider)">Important dates</h6>
         <sc-for list="{{ upcoming }}" as="u" hint-placeholder-count="2">
@@ -158,11 +176,11 @@
     </aside>
   </div>
 
-  <footer style="flex:none;display:flex;align-items:stretch;border-top:2px solid var(--color-divider);background:var(--color-surface)">
-    <div style="display:flex;align-items:center;padding:0 16px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-family:var(--font-heading);font-weight:800;color:var(--color-neutral-700)">Jump to any week</div>
-    <div style="flex:1;display:grid;grid-template-columns:repeat(14,minmax(0,1fr));border-left:1px solid var(--color-divider)">
+  <footer style="flex:none;display:flex;flex-wrap:wrap;align-items:stretch;border-top:2px solid var(--color-divider);background:var(--color-surface)">
+    <div style="display:flex;align-items:center;padding:10px 16px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-family:var(--font-heading);font-weight:800;color:var(--color-neutral-700)">Jump to any week</div>
+    <div style="flex:1 1 320px;display:grid;grid-template-columns:repeat(auto-fit,minmax(44px,1fr));border-left:1px solid var(--color-divider)">
       <sc-for list="{{ weekChips }}" as="w" hint-placeholder-count="14">
-        <button onClick="{{ w.go }}" style="border:0;border-right:1px solid var(--color-divider);cursor:pointer;padding:12px 0;background:{{ w.bg }};color:{{ w.fg }};font-family:var(--font-heading);font-weight:800;font-size:14px" style-hover="opacity:.8">{{ w.label }}</button>
+        <button onClick="{{ w.go }}" style="border:0;border-right:1px solid var(--color-divider);cursor:pointer;padding:14px 0;min-height:44px;background:{{ w.bg }};color:{{ w.fg }};font-family:var(--font-heading);font-weight:800;font-size:14px" style-hover="opacity:.8">{{ w.label }}</button>
       </sc-for>
     </div>
   </footer>
@@ -201,6 +219,7 @@
         <div class="field" style="margin-bottom:12px"><label>Discussion prompt</label><textarea class="input" value="{{ ePrompt }}" onChange="{{ setPrompt }}"></textarea></div>
         <div class="field" style="margin-bottom:12px"><label>Free text — presenters, notes, anything (line breaks kept)</label><textarea class="input" style="min-height:90px" value="{{ eNote }}" onChange="{{ setNote }}"></textarea></div>
         <div class="field" style="margin-bottom:12px"><label>Readings — one per line: Title | Author | URL</label><textarea class="input" style="min-height:110px;font-family:ui-monospace,Menlo,monospace;font-size:12px" value="{{ eReadings }}" onChange="{{ setReadings }}"></textarea></div>
+        <div class="field" style="margin-bottom:12px"><label>Additional readings — one per line: Title | Author | URL</label><textarea class="input" style="min-height:90px;font-family:ui-monospace,Menlo,monospace;font-size:12px" value="{{ eExtraReadings }}" onChange="{{ setExtraReadings }}"></textarea></div>
         <div class="field" style="margin-bottom:12px"><label>Materials — one per line: Name | kind | path or URL</label><textarea class="input" style="min-height:90px;font-family:ui-monospace,Menlo,monospace;font-size:12px" value="{{ eMaterials }}" onChange="{{ setMaterials }}"></textarea></div>
         <div class="field" style="margin-bottom:12px"><label>Assignment — Title | Due | Brief URL | Note (blank for none)</label><textarea class="input" style="min-height:70px;font-family:ui-monospace,Menlo,monospace;font-size:12px" value="{{ eAssignment }}" onChange="{{ setAssignment }}"></textarea></div>
         <hr class="hr">
@@ -267,6 +286,7 @@ class Component extends DCLogic {
       courseTitle: p.courseTitle || "Technologies",
       termLine: (p.term || "Winter 2026/7") + " · with " + (p.instructor || "Jia Hui and Artemis"),
       instructorName: p.instructor || "Jia Hui and Artemis",
+      weekOfLabel: "",
       isCoursework: false, isAssignments: false, editing: false, showEditHint: false
     };
     const code = p.courseCode || d.code;
@@ -297,11 +317,13 @@ class Component extends DCLogic {
       go: () => this.setState({ week: x.n, tab: "coursework" })
     }));
 
-    const readings = (w.readings || []).map((r) => ({
+    const mapReading = (r) => ({
       title: r.title, author: r.author,
       href: r.url || forum.url || "#",
       cta: r.url ? "Open" : "On " + (forum.tool || "E-learning")
-    }));
+    });
+    const readings = (w.readings || []).map(mapReading);
+    const extraReadings = (w.extraReadings || []).map(mapReading);
     const materials = (w.materials || []).map((m) => ({
       name: m.name, kind: m.kind || "file", href: m.url || "#",
       cta: /^https?:/i.test(m.url || "") ? "Open" : "Download"
@@ -375,6 +397,7 @@ class Component extends DCLogic {
       hasNote: !!noteText, weekNote: noteText,
       hasPrompt: !!w.prompt, weekPrompt: w.prompt,
       hasReadings: readings.length > 0, readings,
+      hasExtraReadings: extraReadings.length > 0, extraReadings,
       hasMaterials: materials.length > 0, materials,
       hasAssignment: !!w.assignment,
       assignmentTitle: a.title || "", assignmentNote: a.note || "", assignmentDue: a.due || "TBC",
@@ -392,6 +415,7 @@ class Component extends DCLogic {
       eTitle: w.title || "", eDate: w.date || "", ePrompt: w.prompt || "",
       eNote: noteText,
       eReadings: (w.readings || []).map((r) => [r.title, r.author, r.url || ""].join(" | ")).join("\n"),
+      eExtraReadings: (w.extraReadings || []).map((r) => [r.title, r.author, r.url || ""].join(" | ")).join("\n"),
       eMaterials: (w.materials || []).map((m) => [m.name, m.kind || "file", m.url || ""].join(" | ")).join("\n"),
       eAssignment: w.assignment ? [a.title, a.due || "", a.url || "", a.note || ""].join(" | ") : "",
       eDates: dateSource.map((x) => [x.date, x.title, x.note || ""].join(" | ")).join("\n"),
@@ -409,6 +433,10 @@ class Component extends DCLogic {
       setReadings: (e) => {
         const rows = this.lines(e.target.value).map((l) => { const p = this.parts(l); return { title: p[0] || "", author: p[1] || "", url: p[2] || "" }; });
         this.editWeek((x) => { x.readings = rows; });
+      },
+      setExtraReadings: (e) => {
+        const rows = this.lines(e.target.value).map((l) => { const p = this.parts(l); return { title: p[0] || "", author: p[1] || "", url: p[2] || "" }; });
+        this.editWeek((x) => { x.extraReadings = rows; });
       },
       setMaterials: (e) => {
         const rows = this.lines(e.target.value).map((l) => { const p = this.parts(l); return { name: p[0] || "", kind: p[1] || "file", url: p[2] || "" }; });
