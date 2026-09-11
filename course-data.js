@@ -4,7 +4,7 @@
 window.COURSE_DATA = {
   /* Bump rev by 1 whenever you edit this file. Any browser holding older
      local edits then drops them and shows the published version. */
-  rev: 4,
+  rev: 5,
   code: "54045.",
   title: "Technologies",
   term: "Winter 2026/7",
@@ -36,19 +36,17 @@ This seminar will be taught in English. Some texts are available in both German 
   /* Right-rail "Important dates" — add, remove or reorder freely.
      date: "Sep 11" or "11 Sep". Edit here or in the site editor (Shift+E). */
   importantDates: [
-    { date: "19. Oct", title: "First Meeting of Course" },
-    { date: "16. Nov", title: "Visit to Markgräfliches Opernhaus" },
-    { date: "21. Dec", title: "Reading week — no seminar" },
-    { date: "1. Feb", title: "Final Discussion" },
-    { date: "30. Mar", title: "Manifesto and Long-Form Essay Due - with feedback" },
-    { date: "30. Apr", title: "Manifesto and Long-Form Essay Due - without feedback" }
+    { date: "19 Oct", title: "First Meeting of Course" },
+    { date: "16 Nov", title: "Visit to Markgräfliches Opernhaus" },
+    { date: "21 Dec", title: "Reading week — no seminar" },
+    { date: "1 Feb", title: "Final Discussion" },
+    { date: "30 Mar", title: "Manifesto and Long-Form Essay Due - with feedback" },
+    { date: "30 Apr", title: "Manifesto and Long-Form Essay Due - without feedback" }
   ],
   quickLinks: [
     { label: "Syllabus (PDF)", url: "files/syllabus.pdf" },
     { label: "Office Hours Booking", url: "https://calendly.example.com/office-hours" },
-    { label: "Presentation Sign-Up", url: "https://docs.google.com/spreadsheets/d/SIGNUP" },
-    { label: "Op-Ed Papers Selection", url: "files/oped-papers.pdf" },
-    { label: "Sample Final Project", url: "files/sample-final.pdf" }
+    { label: "E-learning site", url: "https://docs.google.com/spreadsheets/d/SIGNUP" }
   ],
   weeks: [
     {
