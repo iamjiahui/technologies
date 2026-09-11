@@ -6,7 +6,14 @@ window.COURSE_DATA = {
   title: "Technologies",
   term: "Winter 2026/7",
   instructor: "Jia Hui and Artemis",
+  /* Date of the FIRST seminar (YYYY-MM-DD). With autoWeek on, the site works out
+     which week it is every time the page loads — you never have to bump a number.
+     Set autoWeek: false to freeze it on currentWeek instead. */
+  startDate: "2026-09-01",
+  autoWeek: true,
   currentWeek: 1,
+  /* Shown on the Description page. Line breaks are kept. */
+  description: "Replace this with your course description — what the seminar is about, how the weeks are organised, what students are expected to do each week, and how the course is assessed.\n\nThe title page, this page and the fourteen weekly pages are all edited in course-data.js, or in the site editor (Shift+E) followed by Export.",
   discussion: {
     tool: "E-learning",
     url: "https://moodle.example.edu/mod/forum/view.php?id=419",

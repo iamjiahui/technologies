@@ -22,25 +22,58 @@
 <div style="min-height:100vh;display:flex;flex-direction:column;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body)">
 
   <header style="display:flex;flex-wrap:wrap;align-items:stretch;background:#201e1d;color:#f3f2f2;flex:none;position:sticky;top:0;z-index:5">
-    <div style="width:52px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--color-accent);font-family:var(--font-heading);font-weight:800;font-size:15px;letter-spacing:.04em">AI</div>
+    <div style="width: 52px; flex: none; display: flex; align-items: center; justify-content: center; background: var(--color-accent); font-family: var(--font-heading); font-weight: 800; font-size: 12px; letter-spacing: .04em">Anthro</div>
     <div style="flex:1 1 200px;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:2px;padding:12px clamp(14px,3vw,20px)">
       <div style="font-family:var(--font-heading);font-weight:800;font-size:clamp(16px,4vw,19px);line-height:1.1;text-wrap:balance">{{ courseCode }} <span style="font-weight:400">{{ courseTitle }}</span></div>
       <div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.6">{{ termLine }}</div>
     </div>
-    <div style="display:flex;align-items:center;padding:8px clamp(14px,3vw,22px);border-left:1px solid rgba(243,242,242,.25);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-family:var(--font-heading);font-weight:800;white-space:nowrap">{{ weekOfLabel }}</div>
+    
   </header>
 
   <nav style="display:flex;flex-wrap:wrap;align-items:stretch;gap:0;border-bottom:2px solid var(--color-divider);background:var(--color-bg);flex:none;padding-left:8px">
     <sc-for list="{{ tabs }}" as="tab" hint-placeholder-count="4">
-      <button onClick="{{ tab.go }}" style="border:0;cursor:pointer;background:{{ tab.bg }};color:{{ tab.fg }};font-family:var(--font-heading);font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:14px 18px;min-height:44px" style-hover="opacity:.82">{{ tab.label }}</button>
+      
     </sc-for>
-    <a href="{{ forumUrl }}" target="_blank" style="margin-left:auto;display:flex;align-items:center;padding:10px 18px;min-height:44px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-family:var(--font-heading);font-weight:800;text-decoration:none;color:var(--color-accent-700)">Discussion on E-learning &rarr;</a>
+    
   </nav>
 
   <div style="flex:1;display:flex;flex-wrap:wrap;align-items:stretch">
-    <main style="flex:1 1 420px;min-width:0">
+    <main style="flex:1 1 420px;min-width:0;container-type:inline-size">
 
-      <sc-if value="{{ isCoursework }}" hint-placeholder-val="{{ true }}">
+      <sc-if value="{{ isTitlePage }}" hint-placeholder-val="{{ true }}">
+        <div style="background: var(--color-accent); color: var(--color-bg); min-height: min(60vh,600px); display: flex; flex-direction: column; justify-content: space-between; padding: clamp(24px,6vw,56px) clamp(16px,4vw,44px); width: 861px; height: 427px">
+          <div>
+            <div style="font-family:var(--font-heading);font-weight:800;font-size:clamp(14px,2.2cqw,18px);letter-spacing:.16em;text-transform:uppercase;margin-bottom:clamp(20px,6vw,48px)">{{ termLine }}</div>
+            <div style="font-family:var(--font-heading);font-weight:800;font-size:clamp(28px,7cqw,58px);line-height:1;letter-spacing:-.01em;overflow-wrap:anywhere">{{ courseCode }}</div>
+            <h1 style="color:var(--color-bg);font-size:clamp(30px,8.5cqw,70px);line-height:1.02;margin:6px 0 0;letter-spacing:-.02em;text-wrap:balance;overflow-wrap:anywhere;hyphens:auto">{{ courseTitle }}</h1>
+          </div>
+          <div style="border-top:2px solid var(--color-bg);margin-top:clamp(28px,8vw,60px);padding-top:18px;display:flex;flex-wrap:wrap;gap:22px 40px;align-items:flex-end">
+            <div style="flex:1 1 220px;min-width:0">
+              <div style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-family:var(--font-heading);font-weight:800;opacity:.75">Taught by</div>
+              <div style="font-family:var(--font-heading);font-weight:800;font-size:clamp(17px,4.5vw,22px);line-height:1.2">{{ instructorName }}</div>
+            </div>
+            <div style="flex:1 1 160px;min-width:0">
+              
+              
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:10px">
+              
+            </div>
+          </div>
+        </div>
+
+        <div style="padding:clamp(24px,5vw,44px) clamp(16px,4vw,44px) 48px">
+          <h2 style="font-size:clamp(24px,6vw,36px);margin:0 0 20px;letter-spacing:-.01em">Description</h2>
+          <p style="margin:0;font-size:16px;line-height:1.65;white-space:pre-line;text-wrap:pretty;max-width:68ch;border-top:2px solid var(--color-divider);padding-top:20px">{{ courseDescription }}</p>
+          <div style="margin-top:26px;display:flex;flex-wrap:wrap;gap:10px">
+            <a href="{{ forumUrl }}" target="_blank" class="btn btn-secondary">Discussion on {{ forumTool }}</a>
+          </div>
+
+          
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isCoursework }}" hint-placeholder-val="{{ false }}">
         <div>
           <div style="padding:22px clamp(16px,4vw,30px) 40px">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
@@ -60,7 +93,7 @@
               <div style="border-top:2px solid var(--color-divider);border-bottom:2px solid var(--color-divider);padding:16px 0;margin-bottom:26px">
                 <div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700);font-family:var(--font-heading);font-weight:800;margin-bottom:8px">Discussion prompt</div>
                 <p style="margin:0;font-size:16px;font-style:italic;line-height:1.6;text-wrap:pretty;max-width:62ch">{{ weekPrompt }}</p>
-                <a href="{{ forumUrl }}" target="_blank" class="btn btn-secondary" style="margin-top:14px">Post on {{ forumTool }} &rarr;</a>
+                <a href="{{ forumUrl }}" target="_blank" class="btn btn-secondary" style="margin-top:14px">Post on {{ forumTool }} →</a>
               </div>
             </sc-if>
 
@@ -151,7 +184,7 @@
 
     </main>
 
-    <aside style="flex:1 1 320px;max-width:360px;min-width:0;background:var(--color-bg);border-left:2px solid var(--color-divider);border-top:2px solid var(--color-divider)">
+    <aside style="flex:{{ railFlex }};display:{{ railDisplay }};flex-direction:column;max-width:360px;min-width:0;background:var(--color-bg);border-left:2px solid var(--color-divider);border-top:2px solid var(--color-divider)">
       <section style="border-bottom:2px solid var(--color-divider)">
         <h6 style="margin:0;padding:12px 16px;background:var(--color-surface);border-bottom:1px solid var(--color-divider)">Important dates</h6>
         <sc-for list="{{ upcoming }}" as="u" hint-placeholder-count="2">
@@ -177,7 +210,12 @@
   </div>
 
   <footer style="flex:none;display:flex;flex-wrap:wrap;align-items:stretch;border-top:2px solid var(--color-divider);background:var(--color-surface)">
-    <div style="display:flex;align-items:center;padding:10px 16px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-family:var(--font-heading);font-weight:800;color:var(--color-neutral-700)">Jump to any week</div>
+    <div style="display:flex;align-items:center;padding:10px 16px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-family:var(--font-heading);font-weight:800;color:var(--color-neutral-700)">Jump to</div>
+    <div style="display:flex;align-items:stretch">
+      <sc-for list="{{ pageChips }}" as="c" hint-placeholder-count="2">
+        <button onClick="{{ c.go }}" style="border:0;border-left:1px solid var(--color-divider);cursor:pointer;padding:14px 14px;min-height:44px;background:{{ c.bg }};color:{{ c.fg }};font-family:var(--font-heading);font-weight:800;font-size:10px;letter-spacing:.12em;text-transform:uppercase" style-hover="opacity:.8">{{ c.label }}</button>
+      </sc-for>
+    </div>
     <div style="flex:1 1 320px;display:grid;grid-template-columns:repeat(auto-fit,minmax(44px,1fr));border-left:1px solid var(--color-divider)">
       <sc-for list="{{ weekChips }}" as="w" hint-placeholder-count="14">
         <button onClick="{{ w.go }}" style="border:0;border-right:1px solid var(--color-divider);cursor:pointer;padding:14px 0;min-height:44px;background:{{ w.bg }};color:{{ w.fg }};font-family:var(--font-heading);font-weight:800;font-size:14px" style-hover="opacity:.8">{{ w.label }}</button>
@@ -204,10 +242,16 @@
           <div class="field"><label>Semester / term</label><input class="input" value="{{ eTerm }}" onChange="{{ setTerm }}"></div>
           <div class="field"><label>Instructor name</label><input class="input" value="{{ eInstructor }}" onChange="{{ setInstructor }}"></div>
         </div>
+        <div class="field" style="margin-bottom:18px"><label>Course description (shown on the Description page)</label><textarea class="input" style="min-height:130px" value="{{ eDescription }}" onChange="{{ setDescription }}"></textarea></div>
         <h6 style="margin:0 0 8px">Weeks</h6>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
           <div class="field"><label>Number of weeks</label><input class="input" type="number" min="1" max="52" value="{{ eTotalWeeks }}" onChange="{{ setTotalWeeks }}"></div>
-          <div class="field"><label>Current week</label><input class="input" type="number" min="1" value="{{ eCurrentWeek }}" onChange="{{ setCurrentWeek }}"></div>
+          <div class="field"><label>First seminar date (YYYY-MM-DD)</label><input class="input" placeholder="2026-09-01" value="{{ eStartDate }}" onChange="{{ setStartDate }}"></div>
+        </div>
+        <label class="radio" style="margin-bottom:10px"><input type="checkbox" checked="{{ eAutoWeek }}" onChange="{{ setAutoWeek }}"><span class="dot"></span>Advance the current week automatically from that date</label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px;align-items:end">
+          <div class="field"><label>Current week (used only when auto is off)</label><input class="input" type="number" min="1" value="{{ eCurrentWeek }}" onChange="{{ setCurrentWeek }}"></div>
+          <div style="font-size:12px;color:var(--color-neutral-700);padding-bottom:8px">Live now: {{ weekOfLabel }}</div>
         </div>
         <h6 style="margin:0 0 8px">This week</h6>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">
@@ -241,7 +285,31 @@
 const KEY = "pls419.course.v1";
 
 class Component extends DCLogic {
-  state = { data: null, tab: "coursework", week: null, editing: false, editUnlocked: false };
+  state = { data: null, tab: "coursework", week: null, page: "title", editing: false, editUnlocked: false };
+
+  /* The week shown as "this week" — derived from the first seminar date so it
+     advances on its own once the site is live. Falls back to currentWeek. */
+  liveWeekOf(d) {
+    const total = (d.weeks || []).length || 1;
+    let n = d.currentWeek || 1;
+    if (d.autoWeek !== false && d.startDate) {
+      const start = new Date(String(d.startDate) + "T00:00:00");
+      if (!isNaN(start.getTime())) {
+        const days = Math.floor((Date.now() - start.getTime()) / 86400000);
+        n = days < 0 ? 1 : Math.floor(days / 7) + 1;
+      }
+    }
+    return Math.max(1, Math.min(total, n));
+  }
+  termStatus(d) {
+    if (d.autoWeek === false || !d.startDate) return "in";
+    const start = new Date(String(d.startDate) + "T00:00:00");
+    if (isNaN(start.getTime())) return "in";
+    const days = Math.floor((Date.now() - start.getTime()) / 86400000);
+    if (days < 0) return "before";
+    if (Math.floor(days / 7) + 1 > (d.weeks || []).length) return "after";
+    return "in";
+  }
 
   componentDidMount() {
     const base = (typeof window !== "undefined" && window.COURSE_DATA) || null;
@@ -250,8 +318,11 @@ class Component extends DCLogic {
       const saved = localStorage.getItem(KEY);
       if (saved) data = JSON.parse(saved);
     } catch (e) {}
+    if (data && base) ["startDate", "autoWeek", "description"].forEach((k) => {
+      if (data[k] === undefined) data[k] = base[k];
+    });
     const unlocked = /(^|[?&#])edit/.test(location.search + location.hash);
-    this.setState({ data, week: data ? data.currentWeek : 1, editUnlocked: unlocked });
+    this.setState({ data, week: data ? this.liveWeekOf(data) : 1, editUnlocked: unlocked });
     this._onKey = (e) => {
       if (e.key === "E" && e.shiftKey && !/input|textarea/i.test((e.target.tagName || ""))) {
         this.setState((s) => ({ editUnlocked: true, editing: !s.editing }));
@@ -284,9 +355,14 @@ class Component extends DCLogic {
     if (!d) return {
       courseCode: p.courseCode || "54045.",
       courseTitle: p.courseTitle || "Technologies",
-      termLine: (p.term || "Winter 2026/7") + " · with " + (p.instructor || "Jia Hui and Artemis"),
+      termLine: p.term || "Winter 2026/7",
       instructorName: p.instructor || "Jia Hui and Artemis",
       weekOfLabel: "",
+      isTitlePage: true, railDisplay: "none", railFlex: "0 0 0",
+      courseDescription: "", currentWeekCta: "Open week 1",
+      goCurrentWeek: () => {}, upcoming: [], quickLinks: [],
+      forumUrl: "#", forumTool: "E-learning",
+      tabs: [], weekChips: [], pageChips: [],
       isCoursework: false, isAssignments: false, editing: false, showEditHint: false
     };
     const code = p.courseCode || d.code;
@@ -294,7 +370,10 @@ class Component extends DCLogic {
     const term = p.term || d.term;
     const teacher = p.instructor || d.instructor;
     const total = d.weeks.length;
-    const wn = this.state.week || d.currentWeek;
+    const liveWeek = this.liveWeekOf(d);
+    const status = this.termStatus(d);
+    const page = this.state.page || "week";
+    const wn = this.state.week || liveWeek;
     const w = d.weeks.find((x) => x.n === wn) || d.weeks[0];
     const tab = this.state.tab;
     const forum = d.discussion || {};
@@ -307,14 +386,23 @@ class Component extends DCLogic {
       label,
       bg: tab === id ? "var(--color-accent)" : "transparent",
       fg: tab === id ? "var(--color-bg)" : "var(--color-text)",
-      go: () => this.setState({ tab: id })
+      go: () => this.setState({ tab: id, page: id === "coursework" ? "week" : page })
     }));
 
+    const pageDefs = [["title", "Start"]];
+    const pageChips = pageDefs.map(([id, label]) => ({
+      label,
+      bg: tab === "coursework" && page === id ? "var(--color-accent)" : "transparent",
+      fg: tab === "coursework" && page === id ? "var(--color-bg)" : "var(--color-text)",
+      go: () => this.setState({ tab: "coursework", page: id })
+    }));
+
+    const onWeek = tab === "coursework" && page === "week";
     const weekChips = d.weeks.map((x) => ({
       label: x.label || (x.off ? "—" : String(x.n)),
-      bg: x.n === wn ? "var(--color-accent)" : x.n === d.currentWeek ? "#201e1d" : "transparent",
-      fg: x.n === wn || x.n === d.currentWeek ? "var(--color-bg)" : "var(--color-text)",
-      go: () => this.setState({ week: x.n, tab: "coursework" })
+      bg: onWeek && x.n === wn ? "var(--color-accent)" : "transparent",
+      fg: onWeek && x.n === wn ? "var(--color-bg)" : "var(--color-text)",
+      go: () => this.setState({ week: x.n, tab: "coursework", page: "week" })
     }));
 
     const mapReading = (r) => ({
@@ -355,7 +443,7 @@ class Component extends DCLogic {
 
     return {
       courseCode: code, courseTitle: titleTxt,
-      termLine: term + " · with " + teacher,
+      termLine: term,
       instructorName: teacher,
       eTotalWeeks: String(total),
       eCurrentWeek: String(d.currentWeek || 1),
@@ -385,14 +473,29 @@ class Component extends DCLogic {
       setCourseTitle: (e) => { const v = e.target.value; this.save((x) => { x.title = v; }); },
       setTerm: (e) => { const v = e.target.value; this.save((x) => { x.term = v; }); },
       setInstructor: (e) => { const v = e.target.value; this.save((x) => { x.instructor = v; }); },
-      weekOfLabel: "Week " + d.currentWeek + " of " + total,
-      tabs, weekChips,
-      isCoursework: tab === "coursework", isAssignments: tab === "assignments",
+      weekOfLabel: status === "before" ? "Starts week 1"
+        : status === "after" ? "Term complete"
+        : "Week " + liveWeek + " of " + total,
+      courseDescription: d.description || "",
+      eDescription: d.description || "",
+      setDescription: (e) => { const v = e.target.value; this.save((x) => { x.description = v; }); },
+      eStartDate: d.startDate || "",
+      setStartDate: (e) => { const v = e.target.value.trim(); this.save((x) => { x.startDate = v; }); },
+      eAutoWeek: d.autoWeek !== false,
+      setAutoWeek: (e) => { const v = e.target.checked; this.save((x) => { x.autoWeek = v; }); },
+      currentWeekCta: status === "before" ? "Open week 1" : "Open week " + liveWeek,
+      goDescription: () => this.setState({ tab: "coursework", page: "desc" }),
+      goCurrentWeek: () => this.setState({ tab: "coursework", page: "week", week: liveWeek }),
+      tabs, weekChips, pageChips,
+      isTitlePage: tab === "coursework" && page === "title",
+      railDisplay: tab === "coursework" && page === "title" ? "none" : "flex",
+      railFlex: tab === "coursework" && page === "title" ? "0 0 0" : "1 1 320px",
+      isCoursework: onWeek, isAssignments: tab === "assignments",
 
       weekNumber: w.off ? "—" : String(w.n),
       weekTitle: w.title,
       weekMetaLabel: "Week " + w.n + " · " + w.date,
-      weekStateLabel: w.n === d.currentWeek ? "This week" : w.n < d.currentWeek ? "Archive" : "Previewing",
+      weekStateLabel: w.n === liveWeek ? "This week" : w.n < liveWeek ? "Archive" : "Previewing",
       weekImagePath: "files/w" + num + ".jpg",
       hasNote: !!noteText, weekNote: noteText,
       hasPrompt: !!w.prompt, weekPrompt: w.prompt,
@@ -466,7 +569,7 @@ class Component extends DCLogic {
       resetData: () => {
         try { localStorage.removeItem(KEY); } catch (err) {}
         const base = JSON.parse(JSON.stringify(window.COURSE_DATA));
-        this.setState({ data: base, week: base.currentWeek });
+        this.setState({ data: base, week: this.liveWeekOf(base) });
       }
     };
   }
