@@ -36,12 +36,12 @@ This seminar will be taught in English. Some texts are available in both German 
   /* Right-rail "Important dates" — add, remove or reorder freely.
      date: "Sep 11" or "11 Sep". Edit here or in the site editor (Shift+E). */
   importantDates: [
-    { date: "Sep 11", title: "Op-Ed #1 — What Is This Thing?", note: "Op-ed + AI Process Log — publish on The Observatory if you choose" },
-    { date: "Oct 9", title: "Research design memo", note: "2 pages, no AI assistance" },
-    { date: "Oct 20", title: "Reading week — no seminar", note: "" },
-    { date: "Oct 30", title: "Op-Ed #2 due", note: "Submit on E-learning with your AI Process Log" },
-    { date: "Nov 20", title: "Final project proposal", note: "One page + reading list" },
-    { date: "Dec 12", title: "Final project due", note: "Paper or op-ed portfolio + process log" }
+    { date: "19. Oct", title: "First Meeting of Course" },
+    { date: "16. Nov", title: "Visit to Markgräfliches Opernhaus" },
+    { date: "21. Dec", title: "Reading week — no seminar" },
+    { date: "1. Feb", title: "Final Discussion" },
+    { date: "30. Mar", title: "Manifesto and Long-Form Essay Due - with feedback" },
+    { date: "30. Apr", title: "Manifesto and Long-Form Essay Due - without feedback" }
   ],
   quickLinks: [
     { label: "Syllabus (PDF)", url: "files/syllabus.pdf" },
