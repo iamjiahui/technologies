@@ -4,7 +4,7 @@
 window.COURSE_DATA = {
   /* Bump rev by 1 whenever you edit this file. Any browser holding older
      local edits then drops them and shows the published version. */
-  rev: 3,
+  rev: 4,
   code: "54045.",
   title: "Technologies",
   term: "Winter 2026/7",
