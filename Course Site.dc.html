@@ -31,17 +31,16 @@
   </header>
 
   <nav style="display:flex;flex-wrap:wrap;align-items:stretch;gap:0;border-bottom:2px solid var(--color-divider);background:var(--color-bg);flex:none;padding-left:8px">
-    <sc-for list="{{ tabs }}" as="tab" hint-placeholder-count="4">
-      
+    <sc-for list="{{ tabs }}" as="tab" hint-placeholder-count="2">
+      <button onClick="{{ tab.go }}" style="border:0;cursor:pointer;background:{{ tab.bg }};color:{{ tab.fg }};font-family:var(--font-heading);font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:14px 18px;min-height:44px" style-hover="opacity:.82">{{ tab.label }}</button>
     </sc-for>
-    
   </nav>
 
   <div style="flex:1;display:flex;flex-wrap:wrap;align-items:stretch">
     <main style="flex:1 1 420px;min-width:0;container-type:inline-size">
 
       <sc-if value="{{ isTitlePage }}" hint-placeholder-val="{{ true }}">
-        <div style="background: var(--color-accent); color: var(--color-bg); min-height: min(60vh,600px); display: flex; flex-direction: column; justify-content: space-between; padding: clamp(24px,6vw,56px) clamp(16px,4vw,44px); width: 861px; height: 427px">
+        <div style="background: var(--color-accent); color: var(--color-bg); min-height: min(60vh,600px); display: flex; flex-direction: column; justify-content: space-between; padding: clamp(24px,6vw,56px) clamp(16px,4vw,44px)">
           <div>
             <div style="font-family:var(--font-heading);font-weight:800;font-size:clamp(14px,2.2cqw,18px);letter-spacing:.16em;text-transform:uppercase;margin-bottom:clamp(20px,6vw,48px)">{{ termLine }}</div>
             <div style="font-family:var(--font-heading);font-weight:800;font-size:clamp(28px,7cqw,58px);line-height:1;letter-spacing:-.01em;overflow-wrap:anywhere">{{ courseCode }}</div>
@@ -52,24 +51,36 @@
               <div style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-family:var(--font-heading);font-weight:800;opacity:.75">Taught by</div>
               <div style="font-family:var(--font-heading);font-weight:800;font-size:clamp(17px,4.5vw,22px);line-height:1.2">{{ instructorName }}</div>
             </div>
-            <div style="flex:1 1 160px;min-width:0">
-              
-              
-            </div>
-            <div style="display:flex;flex-wrap:wrap;gap:10px">
-              
-            </div>
           </div>
         </div>
 
         <div style="padding:clamp(24px,5vw,44px) clamp(16px,4vw,44px) 48px">
           <h2 style="font-size:clamp(24px,6vw,36px);margin:0 0 20px;letter-spacing:-.01em">Description</h2>
           <p style="margin:0;font-size:16px;line-height:1.65;white-space:pre-line;text-wrap:pretty;max-width:68ch;border-top:2px solid var(--color-divider);padding-top:20px">{{ courseDescription }}</p>
-          <div style="margin-top:26px;display:flex;flex-wrap:wrap;gap:10px">
-            <a href="{{ forumUrl }}" target="_blank" class="btn btn-secondary">Discussion on {{ forumTool }}</a>
-          </div>
 
-          
+          <div style="margin-top:40px;border-top:2px solid var(--color-divider);padding-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px">
+            <section>
+              <h6 style="margin:0 0 6px">Important dates</h6>
+              <sc-for list="{{ upcoming }}" as="u" hint-placeholder-count="3">
+                <div style="display:flex;gap:14px;padding:12px 0;border-top:1px solid var(--color-divider)">
+                  <div style="flex:none;width:38px">
+                    <div style="font-family:var(--font-heading);font-weight:800;font-size:20px;line-height:1">{{ u.day }}</div>
+                    <div style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-700)">{{ u.mon }}</div>
+                  </div>
+                  <div style="flex:1;min-width:0">
+                    <div style="font-family:var(--font-heading);font-weight:800;font-size:14px;line-height:1.25;text-wrap:pretty">{{ u.title }}</div>
+                    <div style="font-size:11px;font-style:italic;color:var(--color-neutral-700);margin-top:3px">{{ u.note }}</div>
+                  </div>
+                </div>
+              </sc-for>
+            </section>
+            <section>
+              <h6 style="margin:0 0 6px">Quick links</h6>
+              <sc-for list="{{ quickLinks }}" as="q" hint-placeholder-count="5">
+                <a href="{{ q.url }}" target="_blank" style="display:block;padding:11px 0;border-top:1px solid var(--color-divider);font-size:14px;text-decoration:none;color:var(--color-text)" style-hover="color:var(--color-accent-700)">{{ q.label }}</a>
+              </sc-for>
+            </section>
+          </div>
         </div>
       </sc-if>
 
@@ -93,7 +104,6 @@
               <div style="border-top:2px solid var(--color-divider);border-bottom:2px solid var(--color-divider);padding:16px 0;margin-bottom:26px">
                 <div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700);font-family:var(--font-heading);font-weight:800;margin-bottom:8px">Discussion prompt</div>
                 <p style="margin:0;font-size:16px;font-style:italic;line-height:1.6;text-wrap:pretty;max-width:62ch">{{ weekPrompt }}</p>
-                <a href="{{ forumUrl }}" target="_blank" class="btn btn-secondary" style="margin-top:14px">Post on {{ forumTool }} →</a>
               </div>
             </sc-if>
 
@@ -281,8 +291,8 @@
 </div>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;courseCode&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;54045.&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Header&quot;}, &quot;courseTitle&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Technologies&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Header&quot;}, &quot;term&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Winter 2026/7&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Header&quot;}, &quot;instructor&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Jia Hui and Artemis&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Header&quot;}}">
-const KEY = "pls419.course.v1";
+<script type="text/x-dc" data-dc-script data-props="{&quot;courseCode&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;54045.&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Header&quot;}, &quot;courseTitle&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Technologies&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Header&quot;}, &quot;term&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Winter 2026/7&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Header&quot;}, &quot;instructor&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Prof. Dr. Jia Hui Lee and Dr. Artemis Ignatidou&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Header&quot;}}">
+const KEY = "pls419.course.v2";
 
 class Component extends DCLogic {
   state = { data: null, tab: "coursework", week: null, page: "title", editing: false, editUnlocked: false };
@@ -314,13 +324,16 @@ class Component extends DCLogic {
   componentDidMount() {
     const base = (typeof window !== "undefined" && window.COURSE_DATA) || null;
     let data = base ? JSON.parse(JSON.stringify(base)) : null;
+    /* Local edits are kept only while course-data.js has the same rev.
+       Bumping rev in the file makes the published data win everywhere. */
     try {
       const saved = localStorage.getItem(KEY);
-      if (saved) data = JSON.parse(saved);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (!base || String(parsed.rev || "") === String(base.rev || "")) data = parsed;
+        else localStorage.removeItem(KEY);
+      }
     } catch (e) {}
-    if (data && base) ["startDate", "autoWeek", "description"].forEach((k) => {
-      if (data[k] === undefined) data[k] = base[k];
-    });
     const unlocked = /(^|[?&#])edit/.test(location.search + location.hash);
     this.setState({ data, week: data ? this.liveWeekOf(data) : 1, editUnlocked: unlocked });
     this._onKey = (e) => {
@@ -356,7 +369,7 @@ class Component extends DCLogic {
       courseCode: p.courseCode || "54045.",
       courseTitle: p.courseTitle || "Technologies",
       termLine: p.term || "Winter 2026/7",
-      instructorName: p.instructor || "Jia Hui and Artemis",
+      instructorName: p.instructor || "Prof. Dr. Jia Hui Lee and Dr. Artemis Ignatidou",
       weekOfLabel: "",
       isTitlePage: true, railDisplay: "none", railFlex: "0 0 0",
       courseDescription: "", currentWeekCta: "Open week 1",
