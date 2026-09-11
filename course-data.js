@@ -13,11 +13,18 @@ window.COURSE_DATA = {
   autoWeek: true,
   currentWeek: 1,
   /* Shown on the Description page. Line breaks are kept. */
-  description: "Replace this with your course description — what the seminar is about, how the weeks are organised, what students are expected to do each week, and how the course is assessed.\n\nThe title page, this page and the fourteen weekly pages are all edited in course-data.js, or in the site editor (Shift+E) followed by Export.",
-  discussion: {
-    tool: "E-learning",
-    url: "https://moodle.example.edu/mod/forum/view.php?id=419",
-    note: "All threaded discussion happens on the E-learning site. One post + one reply per week, due Sunday 23:59."
+  description: "The seminar is an introduction to the field of Science and Technology Studies (STS). STS is dedicated to the social science analysis of the interplay between knowledge, technology and society. Technologies have not only made industrial society possible and shaped modernity, but are also closely linked to its excesses (e.g. environmental pollution, climate change, post-truth politics). Technologies also dominate and enrich our daily lives and social interactions.
+
+This semester (Winter 2026/7), the course is co-taught by an anthropologist of technology and a cultural historian of sound. Across the semester, we will trace these dynamics as much through the history and performance of sound as through computers and laboratories. We will ask how algorithms compute and shape musical taste; how instruments, recordings, and performance — from Bach’s solo violin works to the Edison phonograph’s pursuit of sonic “fidelity” — mediate what counts as musical authenticity. We explore the overlooked work of women in electronic music while examining science and technology themselves as staged and performative, from Latour’s laboratory theater to the Margravial Opera House here in Bayreuth. Finally, we consider how mechanical (re)production — in manuscript, print, photography, and code — has reshaped aesthetic judgment, authorship, and authenticity, from medieval scribes and early modern printing to Walter Benjamin’s reflections on art in the age of mechanical reproduction. 
+
+Based on empirical case studies we will examine different theoretical and methodological approaches to the relationship between knowledge (science), technology and society. We will address the following questions, among others:
+
+•	How does science create knowledge? How can a social science analysis of knowledge (science) practices look like?
+•	How are design, dissemination, application, and appropriation of technologies interconnected?
+•	What kinds of societies and politics do certain scientific knowledge, technology and technical infrastructures enable?
+•	What specific questions and problems arise for an STS that focuses on the global South?
+
+This seminar will be taught in English. Some texts are available in both German and English.",
   },
   /* Right-rail "Important dates" — add, remove or reorder freely.
      date: "Sep 11" or "11 Sep". Edit here or in the site editor (Shift+E). */
@@ -33,9 +40,7 @@ window.COURSE_DATA = {
     { label: "Syllabus (PDF)", url: "files/syllabus.pdf" },
     { label: "Office Hours Booking", url: "https://calendly.example.com/office-hours" },
     { label: "Presentation Sign-Up", url: "https://docs.google.com/spreadsheets/d/SIGNUP" },
-    { label: "E-learning Forum", url: "https://moodle.example.edu/mod/forum/view.php?id=419" },
-    { label: "Op-Ed Papers Selection", url: "files/oped-papers.pdf" },
-    { label: "Sample Final Project", url: "files/sample-final.pdf" }
+    { label: "E-learning Site", url: "https://moodle.example.edu/mod/forum/view.php?id=419" },
   ],
   weeks: [
     {
@@ -146,13 +151,6 @@ window.COURSE_DATA = {
       prompt: "Six presentations, twelve minutes each, hard stop.",
       presenters: [],
       readings: [], materials: [], assignment: null
-    },
-    {
-      n: 14, date: "Dec 1", title: "Student Symposium II & Close",
-      prompt: "Remaining presentations, then what we would teach differently next year.",
-      presenters: [],
-      readings: [], materials: [],
-      assignment: { title: "Final project", due: "Dec 12", url: "", note: "Paper or op-ed portfolio + process log." }
     }
   ]
 };
