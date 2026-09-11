@@ -5,11 +5,11 @@ window.COURSE_DATA = {
   code: "54045.",
   title: "Technologies",
   term: "Winter 2026/7",
-  instructor: "Jia Hui and Artemis",
+  instructor: "Prof. Dr. Jia Hui Lee and Dr. Artemis Ignatidou",
   /* Date of the FIRST seminar (YYYY-MM-DD). With autoWeek on, the site works out
      which week it is every time the page loads — you never have to bump a number.
      Set autoWeek: false to freeze it on currentWeek instead. */
-  startDate: "2026-09-01",
+  startDate: "2026-10-19",
   autoWeek: true,
   currentWeek: 1,
   /* Shown on the Description page. Line breaks are kept. */
