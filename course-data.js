@@ -4,7 +4,7 @@
 window.COURSE_DATA = {
   /* Bump rev by 1 whenever you edit this file. Any browser holding older
      local edits then drops them and shows the published version. */
-  rev: 12,
+  rev: 13,
   code: "54045.",
   title: "Technologies",
   term: "Winter 2026/7",
@@ -86,36 +86,36 @@ Essays and the cumulative mark for the module will be graded according to §16 o
       n: 2, label: "2", date: "26 Oct", title: "The Moveable Type Press",
       prompt: "", presenters: [],
       readings: [
-        { title: "Guda, a Sinful Woman: A Multi-Scalar Portrait of a Medieval Scribe and Illuminator, Historical Research 99 (284): 204–34", author: "Beach, Kwakkel, Vandenabeele, Vermeersch & Andrade (2026)", url: "https://doi.org/10.1093/hisres/htaf017" },
-        { title: "The Beginnings of Printing in the Ottoman Capital: Book Production and Circulation in Early Modern Constantinople, Studies in Ottoman Science 16 (2): 3–32", author: "Palabıyık (2015)", url: "https://dergipark.org.tr/en/download/article-file/673531" }
+        { title: "Guda, a Sinful Woman: A Multi-Scalar Portrait of a Medieval Scribe and Illuminator, Historical Research 99 (284): 204–34", author: "Beach, Kwakkel, Vandenabeele, Vermeersch & Andrade (2026)" },
+        { title: "The Beginnings of Printing in the Ottoman Capital: Book Production and Circulation in Early Modern Constantinople, Studies in Ottoman Science 16 (2): 3–32", author: "Palabıyık (2015)" }
       ],
       extraReadings: [
-        { title: "“Technology”: The Emergence of a Hazardous Concept, Social Research 64 (3): 965–88", author: "Marx (1997)", url: "" },
-        { title: "Social Anthropology of Technology, Annual Review of Anthropology 21: 491–516", author: "Pfaffenberger (1992)", url: "" }
+        { title: "“Technology”: The Emergence of a Hazardous Concept, Social Research 64 (3): 965–88", author: "Marx (1997)" },
+        { title: "Social Anthropology of Technology, Annual Review of Anthropology 21: 491–516", author: "Pfaffenberger (1992)" }
       ]
     },
     {
       n: 3, label: "3", date: "2 Nov", title: "Computing Music Taste",
       prompt: "", presenters: [],
       readings: [
-        { title: "Introduction: Technology with Humanity, in Computing Taste: Algorithms and the Makers of Music Recommendation, pp. 1–21", author: "Seaver (2022)", url: "" },
-        { title: "How Music Takes Place: Excerpts from “The Post-Digital Manifesto”, in The Internet Does Not Exist, 132–49", author: "Fleischer (2015)", url: "" }
+        { title: "Introduction: Technology with Humanity, in Computing Taste: Algorithms and the Makers of Music Recommendation, pp. 1–21", author: "Seaver (2022)" },
+        { title: "How Music Takes Place: Excerpts from “The Post-Digital Manifesto”, in The Internet Does Not Exist, 132–49", author: "Fleischer (2015)" }
       ],
       extraReadings: [
-        { title: "A Taste of Science: Making the Subjective Objective in the California Wine World, Social Studies of Science 46 (3): 436–60", author: "Shapin (2016)", url: "https://doi.org/10.1177/0306312716651346" },
-        { title: "Objectivity", author: "Daston & Galison (2007)", url: "" }
+        { title: "A Taste of Science: Making the Subjective Objective in the California Wine World, Social Studies of Science 46 (3): 436–60", author: "Shapin (2016)" },
+        { title: "Objectivity", author: "Daston & Galison (2007)" }
       ]
     },
     {
       n: 4, label: "4", date: "9 Nov", title: "Technologies of Music",
       prompt: "", presenters: [],
       readings: [
-        { title: "[Selections] Noise: The Political Economy of Music", author: "Attali (1985)", url: "" },
-        { title: "[Selections] Bach Senza Basso: About the Solo Works for Violin of Joh. Seb. Bach", author: "Bijlsma (2012)", url: "" }
+        { title: "[Selections] Noise: The Political Economy of Music", author: "Attali (1985)" },
+        { title: "[Selections] Bach Senza Basso: About the Solo Works for Violin of Joh. Seb. Bach", author: "Bijlsma (2012)" }
       ],
       extraReadings: [
-        { title: "The Soundscape of Modernity: Architectural Acoustics and the Culture of Listening in America, 1900–1933", author: "Thompson (2002)", url: "" },
-        { title: "Seashell Sound, Cabinet no. 48: 23–29", author: "Helmreich (2013)", url: "https://www.cabinetmagazine.org/issues/48/helmreich.php" }
+        { title: "The Soundscape of Modernity: Architectural Acoustics and the Culture of Listening in America, 1900–1933", author: "Thompson (2002)" },
+        { title: "Seashell Sound, Cabinet no. 48: 23–29", author: "Helmreich (2013)" }
       ]
     },
     {
@@ -123,99 +123,112 @@ Essays and the cumulative mark for the module will be graded according to §16 o
       note: "Visit to the Margravial Opera House.",
       prompt: "", presenters: [],
       readings: [
-        { title: "Give Me a Laboratory and I Will Raise the World, in Science Observed, 141–170", author: "Latour (1983)", url: "" },
-        { title: "Gebt mir ein Laboratorium und ich werde die Welt aus den Angeln heben, in ANThology, 103–34", author: "Latour (2006)", url: "" },
-        { title: "Opera as Social Showcase: Rituals of “Magic Mirrors” at the Margravial Opera House in Mid-Eighteenth-Century Bayreuth, Issues in Ethnology and Anthropology 11: 19–45", author: "Kotnik (2016)", url: "https://doi.org/10.21301/EAP.V11I1.1" }
+        { title: "Give Me a Laboratory and I Will Raise the World, in Science Observed, 141–170", author: "Latour (1983)" },
+        { title: "Gebt mir ein Laboratorium und ich werde die Welt aus den Angeln heben, in ANThology, 103–34", author: "Latour (2006)" },
+        { title: "Opera as Social Showcase: Rituals of “Magic Mirrors” at the Margravial Opera House in Mid-Eighteenth-Century Bayreuth, Issues in Ethnology and Anthropology 11: 19–45", author: "Kotnik (2016)" }
       ],
       extraReadings: [
-        { title: "Laborstudien, in Science and Technology Studies. Eine sozialanthropologische Einführung, 145–71", author: "Amelang (2012)", url: "" }
+        { title: "Laborstudien, in Science and Technology Studies. Eine sozialanthropologische Einführung, 145–71", author: "Amelang (2012)" }
       ]
     },
     {
       n: 6, label: "6", date: "23 Nov", title: "Mechanical Production",
       prompt: "", presenters: [],
       readings: [
-        { title: "The Pencil of Nature (1844–46)", author: "Fox Talbot", url: "https://www.gutenberg.org/ebooks/33447" },
-        { title: "Tentacular Faces: Race and the Return of the Phenotype in Forensic Identification, American Anthropologist 122 (2): 369–80", author: "M’charek (2020)", url: "https://doi.org/10.1111/aman.13385" }
+        { title: "The Pencil of Nature (1844–46)", author: "Fox Talbot" },
+        { title: "Tentacular Faces: Race and the Return of the Phenotype in Forensic Identification, American Anthropologist 122 (2): 369–80", author: "M’charek (2020)" }
       ],
       extraReadings: [
-        { title: "On Photography", author: "Sontag (2020)", url: "" },
-        { title: "The Problem of Mechanization: Craft, Machines, and “Centering” in a Japanese Mingei Pottery Village, Journal of Material Culture 23 (2): 133–50", author: "Paredes (2018)", url: "https://doi.org/10.1177/1359183517725366" }
+        { title: "On Photography", author: "Sontag (2020)" },
+        { title: "The Problem of Mechanization: Craft, Machines, and “Centering” in a Japanese Mingei Pottery Village, Journal of Material Culture 23 (2): 133–50", author: "Paredes (2018)" }
       ]
     },
     {
       n: 7, label: "7", date: "30 Nov", title: "Does Technology Have Politics?",
       prompt: "", presenters: [],
       readings: [
-        { title: "Do Artifacts Have Politics?, Daedalus 109 (1): 121–36", author: "Winner (1980)", url: "" },
-        { title: "(Watch) Frank Uekötter im Interview zu seinem Buch „Atomare Demokratie“ (6:52)", author: "Franz Steiner Verlag (2022)", url: "https://www.youtube.com/watch?v=3o_bu7gtOdk" }
+        { title: "Do Artifacts Have Politics?, Daedalus 109 (1): 121–36", author: "Winner (1980)" },
+        { title: "(Watch) Frank Uekötter im Interview zu seinem Buch „Atomare Demokratie“ (6:52)", author: "Franz Steiner Verlag (2022)" }
       ],
       extraReadings: [
-        { title: "How a Popular Medical Device Encodes Racial Bias, Boston Review, 2 Aug 2020", author: "Moran-Thomas (2020)", url: "http://bostonreview.net/science-nature-race/amy-moran-thomas-how-popular-medical-device-encodes-racial-bias" }
+        { title: "How a Popular Medical Device Encodes Racial Bias, Boston Review, 2 Aug 2020", author: "Moran-Thomas (2020)" }
       ]
     },
     {
       n: 8, label: "8", date: "7 Dec", title: "Technology, Users, and Design",
       prompt: "", presenters: [],
       readings: [
-        { title: "The Berlin Key or How to Do Words with Things, in Matter, Materiality, and Modern Culture", author: "Latour (2000)", url: "" },
-        { title: "Der Berliner Schlüssel: Erkundungen eines Liebhabers der Wissenschaften", author: "Latour (1996)", url: "" },
-        { title: "Machines, Music, and the Quest for Fidelity: Marketing the Edison Phonograph in America, 1877–1925, The Musical Quarterly 79 (1): 131–71", author: "Thompson (1995)", url: "" }
+        { title: "The Berlin Key or How to Do Words with Things, in Matter, Materiality, and Modern Culture", author: "Latour (2000)" },
+        { title: "Der Berliner Schlüssel: Erkundungen eines Liebhabers der Wissenschaften", author: "Latour (1996)" },
+        { title: "Machines, Music, and the Quest for Fidelity: Marketing the Edison Phonograph in America, 1877–1925, The Musical Quarterly 79 (1): 131–71", author: "Thompson (1995)" }
       ],
       extraReadings: [
-        { title: "The De-Scription of Technical Objects, in Shaping Technology/Building Society, 205–24", author: "Akrich (1992)", url: "" },
-        { title: "How Users Matter: The Co-Construction of Users and Technology", author: "Oudshoorn & Pinch (2003)", url: "" }
+        { title: "The De-Scription of Technical Objects, in Shaping Technology/Building Society, 205–24", author: "Akrich (1992)" },
+        { title: "How Users Matter: The Co-Construction of Users and Technology", author: "Oudshoorn & Pinch (2003)" }
       ]
     },
     {
       n: 9, label: "9", date: "14 Dec", title: "Mechanical Reproduction",
       prompt: "", presenters: [],
       readings: [
-        { title: "The Work of Art in the Age of Mechanical Reproduction, in Illuminations, 217–251", author: "Benjamin (1935/1969)", url: "" }
+        { title: "The Work of Art in the Age of Mechanical Reproduction, in Illuminations, 217–251", author: "Benjamin (1935/1969)" }
       ],
       extraReadings: []
     },
     {
-      n: 10, label: "10", date: "11 Jan", title: "Decolonizing Technology",
+      n: 10, date: "21 Dec", title: "No class",
+      note: "Free time to work on your essay. Christmas, Hanukkah, Kwanzaa, Zartosht No-Diso, New Year, etc.",
+      prompt: "", presenters: [], readings: [], off: true
+    },
+    {
+      n: 11, date: "28 Dec", title: "No class — winter break",
+      prompt: "", presenters: [], readings: [], off: true
+    },
+    {
+      n: 12, date: "4 Jan", title: "No class — winter break",
+      prompt: "", presenters: [], readings: [], off: true
+    },
+    {
+      n: 13, label: "10", date: "11 Jan", title: "Decolonizing Technology",
       prompt: "", presenters: [],
       readings: [
-        { title: "The Problem with Annotation. Human Labour and Outsourcing between France and Madagascar, Big Data & Society 10 (2)", author: "Le Ludec, Cornet & Casilli (2023)", url: "https://doi.org/10.1177/20539517231188723" },
-        { title: "From Hoping to Expecting: Cochlear Implantation and Habilitation in India, Cultural Anthropology 37 (1): 125–49", author: "Friedner (2022)", url: "https://doi.org/10.14506/ca37.1.10" }
+        { title: "The Problem with Annotation. Human Labour and Outsourcing between France and Madagascar, Big Data & Society 10 (2)", author: "Le Ludec, Cornet & Casilli (2023)" },
+        { title: "From Hoping to Expecting: Cochlear Implantation and Habilitation in India, Cultural Anthropology 37 (1): 125–49", author: "Friedner (2022)" }
       ],
       extraReadings: [
-        { title: "Feminism, Postcolonialism, Technoscience, in The Handbook of Science and Technology Studies, 407–33", author: "Subramaniam, Foster, Harding, Roy & TallBear (2017)", url: "" },
-        { title: "Einführung: Postkoloniale STS, in Science and Technology Studies, 471–94", author: "Schramm (2017)", url: "" },
-        { title: "Postcolonial and Feminist Philosophies of Science and Technology: Convergences and Dissonances, Postcolonial Studies 12 (4): 401–21", author: "Harding (2009)", url: "" },
-        { title: "Provincializing STS: Postcoloniality, Symmetry, and Method, East Asian Science, Technology and Society 11 (2): 211–27", author: "Law & Lin (2017)", url: "" }
+        { title: "Feminism, Postcolonialism, Technoscience, in The Handbook of Science and Technology Studies, 407–33", author: "Subramaniam, Foster, Harding, Roy & TallBear (2017)" },
+        { title: "Einführung: Postkoloniale STS, in Science and Technology Studies, 471–94", author: "Schramm (2017)" },
+        { title: "Postcolonial and Feminist Philosophies of Science and Technology: Convergences and Dissonances, Postcolonial Studies 12 (4): 401–21", author: "Harding (2009)" },
+        { title: "Provincializing STS: Postcoloniality, Symmetry, and Method, East Asian Science, Technology and Society 11 (2): 211–27", author: "Law & Lin (2017)" }
       ]
     },
     {
-      n: 11, label: "11", date: "18 Jan", title: "Gender and Musical Production in the Atomic Age",
+      n: 14, label: "11", date: "18 Jan", title: "Gender and Musical Production in the Atomic Age",
       prompt: "", presenters: [],
       readings: [
-        { title: "Toward a Feminist Historiography of Electronic Music, in The Sound Studies Reader, 475–89", author: "Rodgers (2012)", url: "" }
+        { title: "Toward a Feminist Historiography of Electronic Music, in The Sound Studies Reader, 475–89", author: "Rodgers (2012)" }
       ],
       extraReadings: []
     },
     {
-      n: 12, label: "12", date: "25 Jan", title: "(Artificially?) Intelligent Futures & Manifesto",
+      n: 15, label: "12", date: "25 Jan", title: "(Artificially?) Intelligent Futures & Manifesto",
       prompt: "", presenters: [],
       readings: [
-        { title: "Virtually Shamans: An Anthropological Perspective on AI Chatbots, Anthropology of Consciousness 36 (2)", author: "Hau & Krause-Jensen (2025)", url: "https://doi.org/10.1111/anoc.70011" },
-        { title: "AI Decolonial Manyfesto", author: "Mohamed, Png, Isaac et al.", url: "https://manyfesto.ai/index.html" }
+        { title: "Virtually Shamans: An Anthropological Perspective on AI Chatbots, Anthropology of Consciousness 36 (2)", author: "Hau & Krause-Jensen (2025)" },
+        { title: "AI Decolonial Manyfesto", author: "Mohamed, Png, Isaac et al." }
       ],
       extraReadings: [
-        { title: "A Cyborg Manifesto: Science, Technology, and Socialist-Feminism in the Late Twentieth Century, in Simians, Cyborgs, and Women", author: "Haraway (1991)", url: "" },
-        { title: "Declaration of Futurism, Poesia 5 (6)", author: "Marinetti (1909)", url: "https://bluemountain.princeton.edu/bluemtn/?a=d&d=bmtnaai190904-01.2.3" },
-        { title: "AI as Pharmakon, American Ethnologist 53 (2): 128–31", author: "Su (2026)", url: "https://doi.org/10.1111/amet.70086" },
-        { title: "Enacting AI Disclosure in Scholarly Publishing, American Ethnologist 53 (2): 132–35", author: "LaFlamme & Meyers (2026)", url: "https://doi.org/10.1111/amet.70084" },
-        { title: "Appropriation, Indigenous Knowledge, and Generative AI, American Ethnologist 53 (2): 125–27", author: "Menzies (hagwil hayetsk) (2026)", url: "https://doi.org/10.1111/amet.70081" },
-        { title: "AI as Guru or Conjurer?, American Ethnologist 53 (2): 136–41", author: "Timmer & Hermkens (2026)", url: "https://doi.org/10.1111/amet.70083" },
-        { title: "On Recognizing the Handiwork of AI, American Ethnologist 53 (2): 142–47", author: "Seaver (2026)", url: "https://doi.org/10.1111/amet.70062" }
+        { title: "A Cyborg Manifesto: Science, Technology, and Socialist-Feminism in the Late Twentieth Century, in Simians, Cyborgs, and Women", author: "Haraway (1991)" },
+        { title: "Declaration of Futurism, Poesia 5 (6)", author: "Marinetti (1909)" },
+        { title: "AI as Pharmakon, American Ethnologist 53 (2): 128–31", author: "Su (2026)" },
+        { title: "Enacting AI Disclosure in Scholarly Publishing, American Ethnologist 53 (2): 132–35", author: "LaFlamme & Meyers (2026)" },
+        { title: "Appropriation, Indigenous Knowledge, and Generative AI, American Ethnologist 53 (2): 125–27", author: "Menzies (hagwil hayetsk) (2026)" },
+        { title: "AI as Guru or Conjurer?, American Ethnologist 53 (2): 136–41", author: "Timmer & Hermkens (2026)" },
+        { title: "On Recognizing the Handiwork of AI, American Ethnologist 53 (2): 142–47", author: "Seaver (2026)" }
       ]
     },
     {
-      n: 13, label: "13", date: "1 Feb", title: "Conclusions and Feedback",
+      n: 16, label: "13", date: "1 Feb", title: "Conclusions and Feedback",
       prompt: "", presenters: [],
       readings: [],
       extraReadings: []
