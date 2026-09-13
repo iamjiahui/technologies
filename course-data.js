@@ -71,7 +71,7 @@ Essays and the cumulative mark for the module will be graded according to §16 o
     { date: "30 Apr", title: "Manifesto and Long-Form Essay Due - without feedback" }
   ],
   quickLinks: [
-    { label: "Syllabus (PDF)", url: "files/syllabus.pdf" },
+    { label: "Syllabus (PDF)", url: "https://elearning.uni-bayreuth.de/mod/resource/view.php?id=1716158" },
     { label: "E-learning site", url: "https://elearning.uni-bayreuth.de/course/view.php?id=48964" }
   ],
   weeks: [
