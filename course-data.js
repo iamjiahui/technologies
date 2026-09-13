@@ -176,20 +176,7 @@ Essays and the cumulative mark for the module will be graded according to §16 o
       extraReadings: []
     },
     {
-      n: 10, date: "21 Dec", title: "No class",
-      note: "Free time to work on your essay. Christmas, Hanukkah, Kwanzaa, Zartosht No-Diso, New Year, etc.",
-      prompt: "", presenters: [], readings: [], off: true
-    },
-    {
-      n: 11, date: "28 Dec", title: "No class — winter break",
-      prompt: "", presenters: [], readings: [], off: true
-    },
-    {
-      n: 12, date: "4 Jan", title: "No class — winter break",
-      prompt: "", presenters: [], readings: [], off: true
-    },
-    {
-      n: 13, label: "10", date: "11 Jan", title: "Decolonizing Technology",
+      n: 10, label: "10", date: "11 Jan", title: "Decolonizing Technology",
       prompt: "", presenters: [],
       readings: [
         { title: "The Problem with Annotation. Human Labour and Outsourcing between France and Madagascar, Big Data & Society 10 (2)", author: "Le Ludec, Cornet & Casilli (2023)", url: "https://doi.org/10.1177/20539517231188723" },
@@ -203,7 +190,7 @@ Essays and the cumulative mark for the module will be graded according to §16 o
       ]
     },
     {
-      n: 14, label: "11", date: "18 Jan", title: "Gender and Musical Production in the Atomic Age",
+      n: 11, label: "11", date: "18 Jan", title: "Gender and Musical Production in the Atomic Age",
       prompt: "", presenters: [],
       readings: [
         { title: "Toward a Feminist Historiography of Electronic Music, in The Sound Studies Reader, 475–89", author: "Rodgers (2012)", url: "" }
@@ -211,7 +198,7 @@ Essays and the cumulative mark for the module will be graded according to §16 o
       extraReadings: []
     },
     {
-      n: 15, label: "12", date: "25 Jan", title: "(Artificially?) Intelligent Futures & Manifesto",
+      n: 12, label: "12", date: "25 Jan", title: "(Artificially?) Intelligent Futures & Manifesto",
       prompt: "", presenters: [],
       readings: [
         { title: "Virtually Shamans: An Anthropological Perspective on AI Chatbots, Anthropology of Consciousness 36 (2)", author: "Hau & Krause-Jensen (2025)", url: "https://doi.org/10.1111/anoc.70011" },
@@ -228,7 +215,7 @@ Essays and the cumulative mark for the module will be graded according to §16 o
       ]
     },
     {
-      n: 16, label: "13", date: "1 Feb", title: "Conclusions and Feedback",
+      n: 13, label: "13", date: "1 Feb", title: "Conclusions and Feedback",
       prompt: "", presenters: [],
       readings: [],
       extraReadings: []
