@@ -58,6 +58,11 @@
           <h2 style="font-size:clamp(24px,6vw,36px);margin:0 0 20px;letter-spacing:-.01em">Description</h2>
           <p style="margin:0;font-size:16px;line-height:1.65;white-space:pre-line;text-wrap:pretty;max-width:68ch;border-top:2px solid var(--color-divider);padding-top:20px">{{ courseDescription }}</p>
 
+          <section style="margin-top:40px;border-top:2px solid var(--color-divider);padding-top:24px">
+            <h2 style="font-size:clamp(22px,5vw,30px);margin:0 0 14px;letter-spacing:-.01em">Assignments</h2>
+            <p style="margin:0;font-size:16px;line-height:1.65;white-space:pre-line;text-wrap:pretty;max-width:68ch">{{ assignmentsText }}</p>
+          </section>
+
           <div style="margin-top:40px;border-top:2px solid var(--color-divider);padding-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px">
             <section>
               <h6 style="margin:0 0 6px">Important dates</h6>
@@ -137,57 +142,6 @@
               </section>
             </sc-if>
 
-            <sc-if value="{{ hasMaterials }}" hint-placeholder-val="{{ true }}">
-              <section style="margin-bottom:30px">
-                <h6 style="margin:0 0 6px">Materials</h6>
-                <sc-for list="{{ materials }}" as="m" hint-placeholder-count="2">
-                  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;padding:14px 0;border-top:1px solid var(--color-divider)">
-                    <span class="tag tag-accent" style="flex:none;font-family:var(--font-heading);font-weight:800;font-size:10px;letter-spacing:.08em;text-transform:uppercase">{{ m.kind }}</span>
-                    <div style="flex:1 1 180px;min-width:0;font-size:15px">{{ m.name }}</div>
-                    <a href="{{ m.href }}" target="_blank" class="btn btn-secondary" style="flex:none">{{ m.cta }}</a>
-                  </div>
-                </sc-for>
-              </section>
-            </sc-if>
-
-            <sc-if value="{{ hasAssignment }}" hint-placeholder-val="{{ true }}">
-              <section style="border-top:2px solid var(--color-divider);padding-top:16px">
-                <h6 style="margin:0 0 10px">Assignment</h6>
-                <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:14px 18px">
-                  <div style="flex:1 1 220px;min-width:0">
-                    <div style="font-family:var(--font-heading);font-weight:800;font-size:20px;line-height:1.2;text-wrap:pretty">{{ assignmentTitle }}</div>
-                    <div style="font-size:13px;font-style:italic;color:var(--color-neutral-700);margin-top:4px">{{ assignmentNote }}</div>
-                  </div>
-                  <div style="flex:none;text-align:left">
-                    <div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-neutral-700)">Due</div>
-                    <div style="font-family:var(--font-heading);font-weight:800;font-size:18px">{{ assignmentDue }}</div>
-                  </div>
-                </div>
-              </section>
-            </sc-if>
-          </div>
-        </div>
-      </sc-if>
-
-      <sc-if value="{{ isAssignments }}" hint-placeholder-val="{{ false }}">
-        <div style="padding:26px clamp(16px,4vw,30px) 40px;max-width:900px">
-          <h2 style="margin-bottom:14px;font-size:clamp(24px,6vw,34px)">Assignments</h2>
-          <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
-          <table class="table" style="min-width:520px">
-            <thead>
-              <tr><th style="width:70px">Week</th><th>Title</th><th style="width:90px">Due</th><th style="width:120px">Brief</th></tr>
-            </thead>
-            <tbody>
-              <sc-for list="{{ assignmentRows }}" as="a" hint-placeholder-count="5">
-                <tr>
-                  <td style="font-family:var(--font-heading);font-weight:800">{{ a.week }}</td>
-                  <td>{{ a.title }}<div style="font-size:12px;font-style:italic;color:var(--color-neutral-700)">{{ a.note }}</div></td>
-                  <td style="white-space:nowrap">{{ a.due }}</td>
-                  <td><a href="{{ a.href }}" target="_blank" class="btn btn-secondary">{{ a.cta }}</a></td>
-                </tr>
-              </sc-for>
-            </tbody>
-          </table>
           </div>
         </div>
       </sc-if>
@@ -252,7 +206,8 @@
           <div class="field"><label>Semester / term</label><input class="input" value="{{ eTerm }}" onChange="{{ setTerm }}"></div>
           <div class="field"><label>Instructor name</label><input class="input" value="{{ eInstructor }}" onChange="{{ setInstructor }}"></div>
         </div>
-        <div class="field" style="margin-bottom:18px"><label>Course description (shown on the Description page)</label><textarea class="input" style="min-height:130px" value="{{ eDescription }}" onChange="{{ setDescription }}"></textarea></div>
+        <div class="field" style="margin-bottom:12px"><label>Course description (shown on the Start page)</label><textarea class="input" style="min-height:130px" value="{{ eDescription }}" onChange="{{ setDescription }}"></textarea></div>
+        <div class="field" style="margin-bottom:18px"><label>Assignments — free text, shown on the Start page (line breaks kept)</label><textarea class="input" style="min-height:110px" value="{{ eAssignments }}" onChange="{{ setAssignments }}"></textarea></div>
         <h6 style="margin:0 0 8px">Weeks</h6>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
           <div class="field"><label>Number of weeks</label><input class="input" type="number" min="1" max="52" value="{{ eTotalWeeks }}" onChange="{{ setTotalWeeks }}"></div>
@@ -274,8 +229,6 @@
         <div class="field" style="margin-bottom:12px"><label>Free text — presenters, notes, anything (line breaks kept)</label><textarea class="input" style="min-height:90px" value="{{ eNote }}" onChange="{{ setNote }}"></textarea></div>
         <div class="field" style="margin-bottom:12px"><label>Readings — one per line: Title | Author | URL</label><textarea class="input" style="min-height:110px;font-family:ui-monospace,Menlo,monospace;font-size:12px" value="{{ eReadings }}" onChange="{{ setReadings }}"></textarea></div>
         <div class="field" style="margin-bottom:12px"><label>Additional readings — one per line: Title | Author | URL</label><textarea class="input" style="min-height:90px;font-family:ui-monospace,Menlo,monospace;font-size:12px" value="{{ eExtraReadings }}" onChange="{{ setExtraReadings }}"></textarea></div>
-        <div class="field" style="margin-bottom:12px"><label>Materials — one per line: Name | kind | path or URL</label><textarea class="input" style="min-height:90px;font-family:ui-monospace,Menlo,monospace;font-size:12px" value="{{ eMaterials }}" onChange="{{ setMaterials }}"></textarea></div>
-        <div class="field" style="margin-bottom:12px"><label>Assignment — Title | Due | Brief URL | Note (blank for none)</label><textarea class="input" style="min-height:70px;font-family:ui-monospace,Menlo,monospace;font-size:12px" value="{{ eAssignment }}" onChange="{{ setAssignment }}"></textarea></div>
         <hr class="hr">
         <h6 style="margin:0 0 8px">Right rail</h6>
         <div class="field" style="margin-bottom:12px"><label>Important dates — one per line: Sep 11 | Title | Note</label><textarea class="input" style="min-height:150px;font-family:ui-monospace,Menlo,monospace;font-size:12px" value="{{ eDates }}" onChange="{{ setDates }}"></textarea></div>
@@ -372,11 +325,11 @@ class Component extends DCLogic {
       instructorName: p.instructor || "Prof. Dr. Jia Hui Lee and Dr. Artemis Ignatidou",
       weekOfLabel: "",
       isTitlePage: true, railDisplay: "none", railFlex: "0 0 0",
-      courseDescription: "", currentWeekCta: "Open week 1",
+      courseDescription: "", assignmentsText: "", currentWeekCta: "Open week 1",
       goCurrentWeek: () => {}, upcoming: [], quickLinks: [],
       forumUrl: "#", forumTool: "E-learning",
       tabs: [], weekChips: [], pageChips: [],
-      isCoursework: false, isAssignments: false, editing: false, showEditHint: false
+      isCoursework: false, editing: false, showEditHint: false
     };
     const code = p.courseCode || d.code;
     const titleTxt = p.courseTitle || d.title;
@@ -391,10 +344,7 @@ class Component extends DCLogic {
     const tab = this.state.tab;
     const forum = d.discussion || {};
 
-    const tabDefs = [
-      ["coursework", "Coursework"],
-      ["assignments", "Assignments"]
-    ];
+    const tabDefs = [["coursework", "Coursework"]];
     const tabs = tabDefs.map(([id, label]) => ({
       label,
       bg: tab === id ? "var(--color-accent)" : "transparent",
@@ -425,21 +375,7 @@ class Component extends DCLogic {
     });
     const readings = (w.readings || []).map(mapReading);
     const extraReadings = (w.extraReadings || []).map(mapReading);
-    const materials = (w.materials || []).map((m) => ({
-      name: m.name, kind: m.kind || "file", href: m.url || "#",
-      cta: /^https?:/i.test(m.url || "") ? "Open" : "Download"
-    }));
-
-    const assignmentRows = d.weeks.filter((x) => x.assignment).map((x) => ({
-      week: String(x.n), title: x.assignment.title, note: x.assignment.note || "",
-      due: x.assignment.due || "TBC",
-      href: x.assignment.url || forum.url || "#",
-      cta: x.assignment.url ? "Open brief" : (forum.tool || "E-learning")
-    }));
-
-    const dateSource = (d.importantDates && d.importantDates.length)
-      ? d.importantDates
-      : assignmentRows.map((a) => ({ date: a.due, title: a.title, note: a.note }));
+    const dateSource = d.importantDates || [];
     const upcoming = dateSource.map((x) => {
       const bits = String(x.date || "").split(/\s+/);
       const numFirst = /^\d/.test(bits[0] || "");
@@ -451,7 +387,6 @@ class Component extends DCLogic {
     });
 
     const noteText = typeof w.note === "string" ? w.note : (w.presenters || []).join(" · ");
-    const a = w.assignment || {};
     const num = wn < 10 ? "0" + wn : String(wn);
 
     return {
@@ -468,7 +403,7 @@ class Component extends DCLogic {
           while (x.weeks.length > n) x.weeks.pop();
           while (x.weeks.length < n) {
             const next = x.weeks.length + 1;
-            x.weeks.push({ n: next, date: "", title: "Week " + next, prompt: "", presenters: [], readings: [], materials: [], assignment: null });
+            x.weeks.push({ n: next, date: "", title: "Week " + next, prompt: "", presenters: [], readings: [], extraReadings: [] });
           }
           x.weeks.forEach((wk, i) => { wk.n = i + 1; });
           if (x.currentWeek > n) x.currentWeek = n;
@@ -503,25 +438,25 @@ class Component extends DCLogic {
       isTitlePage: tab === "coursework" && page === "title",
       railDisplay: tab === "coursework" && page === "title" ? "none" : "flex",
       railFlex: tab === "coursework" && page === "title" ? "0 0 0" : "1 1 320px",
-      isCoursework: onWeek, isAssignments: tab === "assignments",
+      isCoursework: onWeek,
 
-      weekNumber: w.off ? "—" : String(w.n),
+      weekNumber: w.off ? "—" : String(w.label || w.n),
       weekTitle: w.title,
-      weekMetaLabel: "Week " + w.n + " · " + w.date,
+      weekMetaLabel: w.off ? w.date : "Week " + (w.label || w.n) + " · " + w.date,
       weekStateLabel: w.n === liveWeek ? "This week" : w.n < liveWeek ? "Archive" : "Previewing",
       weekImagePath: "files/w" + num + ".jpg",
       hasNote: !!noteText, weekNote: noteText,
       hasPrompt: !!w.prompt, weekPrompt: w.prompt,
       hasReadings: readings.length > 0, readings,
       hasExtraReadings: extraReadings.length > 0, extraReadings,
-      hasMaterials: materials.length > 0, materials,
-      hasAssignment: !!w.assignment,
-      assignmentTitle: a.title || "", assignmentNote: a.note || "", assignmentDue: a.due || "TBC",
 
       forumTool: forum.tool || "the forum", forumUrl: forum.url || "#", forumNote: forum.note || "",
       forumCta: "Discussion on " + (forum.tool || "the forum"),
       quickLinks: d.quickLinks || [],
-      upcoming, assignmentRows,
+      assignmentsText: d.assignments || "",
+      eAssignments: d.assignments || "",
+      setAssignments: (e) => { const v = e.target.value; this.save((x) => { x.assignments = v; }); },
+      upcoming,
 
       editing: this.state.editing,
       showEditHint: this.state.editUnlocked && !this.state.editing,
@@ -532,8 +467,6 @@ class Component extends DCLogic {
       eNote: noteText,
       eReadings: (w.readings || []).map((r) => [r.title, r.author, r.url || ""].join(" | ")).join("\n"),
       eExtraReadings: (w.extraReadings || []).map((r) => [r.title, r.author, r.url || ""].join(" | ")).join("\n"),
-      eMaterials: (w.materials || []).map((m) => [m.name, m.kind || "file", m.url || ""].join(" | ")).join("\n"),
-      eAssignment: w.assignment ? [a.title, a.due || "", a.url || "", a.note || ""].join(" | ") : "",
       eDates: dateSource.map((x) => [x.date, x.title, x.note || ""].join(" | ")).join("\n"),
       setDates: (e) => {
         const rows = this.lines(e.target.value).map((l) => { const q = this.parts(l); return { date: q[0] || "", title: q[1] || "", note: q[2] || "" }; });
@@ -553,15 +486,6 @@ class Component extends DCLogic {
       setExtraReadings: (e) => {
         const rows = this.lines(e.target.value).map((l) => { const p = this.parts(l); return { title: p[0] || "", author: p[1] || "", url: p[2] || "" }; });
         this.editWeek((x) => { x.extraReadings = rows; });
-      },
-      setMaterials: (e) => {
-        const rows = this.lines(e.target.value).map((l) => { const p = this.parts(l); return { name: p[0] || "", kind: p[1] || "file", url: p[2] || "" }; });
-        this.editWeek((x) => { x.materials = rows; });
-      },
-      setAssignment: (e) => {
-        const v = e.target.value.trim();
-        const p = this.parts(v);
-        this.editWeek((x) => { x.assignment = v ? { title: p[0] || "", due: p[1] || "", url: p[2] || "", note: p[3] || "" } : null; });
       },
       setQuickLinks: (e) => {
         const rows = this.lines(e.target.value).map((l) => { const p = this.parts(l); return { label: p[0] || "", url: p[1] || "" }; });

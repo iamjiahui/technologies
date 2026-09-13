@@ -4,7 +4,7 @@
 window.COURSE_DATA = {
   /* Bump rev by 1 whenever you edit this file. Any browser holding older
      local edits then drops them and shows the published version. */
-  rev: 5,
+  rev: 12,
   code: "54045.",
   title: "Technologies",
   term: "Winter 2026/7",
@@ -16,7 +16,9 @@ window.COURSE_DATA = {
   autoWeek: true,
   currentWeek: 1,
   /* Shown on the Description page. Line breaks are kept. */
-  description: `The seminar is an introduction to the field of Science and Technology Studies (STS). STS is dedicated to the social science analysis of the interplay between knowledge, technology and society. Technologies have not only made industrial society possible and shaped modernity, but are also closely linked to its excesses (e.g. environmental pollution, climate change, post-truth politics). Technologies also dominate and enrich our daily lives and social interactions.
+  description: `Mondays, 14–16h · Venue: S6 (GWII)
+
+The seminar is an introduction to the field of Science and Technology Studies (STS). STS is dedicated to the social science analysis of the interplay between knowledge, technology and society. Technologies have not only made industrial society possible and shaped modernity, but are also closely linked to its excesses (e.g. environmental pollution, climate change, post-truth politics). Technologies also dominate and enrich our daily lives and social interactions.
 
 This semester (Winter 2026/7), the course is co-taught by an anthropologist of technology and a cultural historian of sound. Across the semester, we will trace these dynamics as much through the history and performance of sound as through computers and laboratories. We will ask how algorithms compute and shape musical taste; how instruments, recordings, and performance — from Bach’s solo violin works to the Edison phonograph’s pursuit of sonic “fidelity” — mediate what counts as musical authenticity. We explore the overlooked work of women in electronic music while examining science and technology themselves as staged and performative, from Latour’s laboratory theater to the Margravial Opera House here in Bayreuth. Finally, we consider how mechanical (re)production — in manuscript, print, photography, and code — has reshaped aesthetic judgment, authorship, and authenticity, from medieval scribes and early modern printing to Walter Benjamin’s reflections on art in the age of mechanical reproduction.
 
@@ -28,9 +30,34 @@ Based on empirical case studies we will examine different theoretical and method
 • What specific questions and problems arise for an STS that focuses on the global South?
 
 This seminar will be taught in English. Some texts are available in both German and English.`,
+  /* Assignments — free text shown on the Start page. Line breaks are kept. */
+  assignments: `Exam (Hausarbeit)
+
+As a textual form, manifestos have a long history of intervening in debates about technology and society — from technical communities issuing statements of principle, to critical and artistic responses like Donna Haraway's "A Cyborg Manifesto," which used the form to argue about the politics of human-machine relations rather than simply describe them, to F.T. Marinetti's "Manifesto of Futurism," which calls for the embrace of the modern machine age. A manifesto declares an ethical, political, or social position. We encourage you to experiment with this genre in the final exam.
+
+The final exam is a long-form essay (Hausarbeit) containing two sections. Section 1 requires you to write a manifesto. Section 2 requires you to explain the manifesto you wrote by reflecting on the themes of the course.
+
+Important information — following Para. 11, no. 8 of the Studien- und Prüfungsordnung (p. 10):
+• Section 1 should be maximum 3 pages.
+• Section 2 can be between 3–15 pages.
+• Your manifesto can be written in German or English. You are encouraged to write your reflection in English, and you are allowed to use large language models (LLM) for translation (with acknowledgement).
+• Due 30 March with feedback. Due 30 April without feedback.
+
+Section 1 (max. 3 pages): Write a manifesto on the student use of A.I. at the University of Bayreuth. Please take a clear position. You may take any position:
+• In favor — arguing for AI's expansion, adoption, or a particular use of it
+• Against — arguing for resistance, restriction, or rejection
+• Neither — refusing the binary, reframing the question, or making a different kind of argument (e.g. about who should control AI, or on what terms, rather than whether it should be used)
+
+Section 2 (3–15 pages): Reflect on the manifesto you just wrote, linking your reflections to readings and discussions from the course. Do not summarize — it is an analysis of why you wrote the manifesto the way you did and how it relates to what we've read and discussed this semester. Address some of these points:
+• Position and its sources. Where does your stance on AI come from? Which course readings, concepts, or class discussions influenced, inspired or informed your position, including the ones you disagreed with?
+• Genre and rhetoric. What choices did you make in writing the manifesto (tone, structure, imagery, audience) and why? Who is its target audience? What did the manifesto form let you say, or force you to leave out, that a more conventional essay would not?
+• Conceptual framing. Situate your manifesto within the theoretical vocabulary of the course — does it treat technology as autonomous and deterministic, or as socially shaped and contested? Does it invoke specific actors, infrastructures, or histories we've discussed? Is it an example of a pattern we've studied (automation, authenticity, equality, nation-building, humanity)?
+• A moment of friction. Do you think your manifesto is persuasive? Why or why not? Identify at least one course reading or discussion that complicates or unsettles your position, and engage with it seriously rather than dismissing it.
+
+Essays and the cumulative mark for the module will be graded according to §16 of the Prüfungs- und Studienordnung für den Bachelorstudiengang Sozial- und Kulturanthropologie an der Universität Bayreuth (consult the latest version where available).`,
   discussion: {
     tool: "E-learning",
-    url: "https://moodle.example.edu/mod/forum/view.php?id=419",
+    url: "https://elearning.uni-bayreuth.de/course/view.php?id=48964",
     note: "All threaded discussion happens on the E-learning site. One post + one reply per week, due Sunday 23:59."
   },
   /* Right-rail "Important dates" — add, remove or reorder freely.
@@ -38,132 +65,173 @@ This seminar will be taught in English. Some texts are available in both German 
   importantDates: [
     { date: "19 Oct", title: "First Meeting of Course" },
     { date: "16 Nov", title: "Visit to Markgräfliches Opernhaus" },
-    { date: "21 Dec", title: "Reading week — no seminar" },
+    { date: "21 Dec", title: "No class — time to work on your essay" },
     { date: "1 Feb", title: "Final Discussion" },
     { date: "30 Mar", title: "Manifesto and Long-Form Essay Due - with feedback" },
     { date: "30 Apr", title: "Manifesto and Long-Form Essay Due - without feedback" }
   ],
   quickLinks: [
     { label: "Syllabus (PDF)", url: "files/syllabus.pdf" },
-    { label: "Office Hours Booking", url: "https://calendly.example.com/office-hours" },
-    { label: "E-learning site", url: "https://docs.google.com/spreadsheets/d/SIGNUP" }
+    { label: "E-learning site", url: "https://elearning.uni-bayreuth.de/course/view.php?id=48964" }
   ],
   weeks: [
     {
-      n: 1, date: "Sep 1", title: "What Counts as Intelligence?",
-      prompt: "Before anything technical: what work is the word \u201cintelligence\u201d doing when we apply it to a machine, and who benefits from the ambiguity?",
-      presenters: [],
+      n: 1, label: "1", date: "19 Oct", title: "What is Technology?",
+      note: "Introduction to the course and syllabus.",
+      prompt: "", presenters: [],
+      readings: [],
+      extraReadings: []
+    },
+    {
+      n: 2, label: "2", date: "26 Oct", title: "The Moveable Type Press",
+      prompt: "", presenters: [],
       readings: [
-        { title: "Computing Machinery and Intelligence", author: "Turing (1950)", url: "https://academic.oup.com/mind/article/LIX/236/433/986238" },
-        { title: "Minds, Brains, and Programs", author: "Searle (1980)", url: "" }
+        { title: "Guda, a Sinful Woman: A Multi-Scalar Portrait of a Medieval Scribe and Illuminator, Historical Research 99 (284): 204–34", author: "Beach, Kwakkel, Vandenabeele, Vermeersch & Andrade (2026)", url: "https://doi.org/10.1093/hisres/htaf017" },
+        { title: "The Beginnings of Printing in the Ottoman Capital: Book Production and Circulation in Early Modern Constantinople, Studies in Ottoman Science 16 (2): 3–32", author: "Palabıyık (2015)", url: "https://dergipark.org.tr/en/download/article-file/673531" }
       ],
-      /* extraReadings — optional, shown under "Additional readings". Same shape as readings. */
-      extraReadings: [],
-      materials: [{ name: "Week 1 slides", kind: "slides", url: "files/w01-slides.pdf" }],
-      assignment: null
+      extraReadings: [
+        { title: "“Technology”: The Emergence of a Hazardous Concept, Social Research 64 (3): 965–88", author: "Marx (1997)", url: "" },
+        { title: "Social Anthropology of Technology, Annual Review of Anthropology 21: 491–516", author: "Pfaffenberger (1992)", url: "" }
+      ]
     },
     {
-      n: 2, date: "Sep 8", title: "Machines That Predict People",
-      prompt: "Prediction is not explanation. Where does that distinction bite hardest in social science?",
-      presenters: [],
+      n: 3, label: "3", date: "2 Nov", title: "Computing Music Taste",
+      prompt: "", presenters: [],
       readings: [
-        { title: "Prediction Policy Problems", author: "Kleinberg et al. (2015)", url: "" },
-        { title: "To Explain or to Predict?", author: "Shmueli (2010)", url: "" }
+        { title: "Introduction: Technology with Humanity, in Computing Taste: Algorithms and the Makers of Music Recommendation, pp. 1–21", author: "Seaver (2022)", url: "" },
+        { title: "How Music Takes Place: Excerpts from “The Post-Digital Manifesto”, in The Internet Does Not Exist, 132–49", author: "Fleischer (2015)", url: "" }
       ],
-      extraReadings: [],
-      materials: [{ name: "Week 2 slides", kind: "slides", url: "files/w02-slides.pdf" }],
-      assignment: { title: "Op-Ed #1 — What Is This Thing?", due: "Sep 11", url: "files/oped1-brief.pdf", note: "Op-ed + AI Process Log — publish on The Observatory if you choose" }
+      extraReadings: [
+        { title: "A Taste of Science: Making the Subjective Objective in the California Wine World, Social Studies of Science 46 (3): 436–60", author: "Shapin (2016)", url: "https://doi.org/10.1177/0306312716651346" },
+        { title: "Objectivity", author: "Daston & Galison (2007)", url: "" }
+      ]
     },
     {
-      n: 3, date: "Sep 15", title: "Could It Be Conscious?",
-      prompt: "The hard question from three angles: the case for taking it seriously, the reason we may never be able to settle it, and the classic account of why experience resists outside description.",
-      presenters: [],
+      n: 4, label: "4", date: "9 Nov", title: "Technologies of Music",
+      prompt: "", presenters: [],
       readings: [
-        { title: "Could a large language model be conscious?", author: "Chalmers (2023)", url: "https://arxiv.org/abs/2303.07103" },
-        { title: "The Edge of Sentience — read Ch. 16, Large Language Models and the Gaming Problem", author: "Birch (2024)", url: "" },
-        { title: "What is it like to be a bat?", author: "Nagel (1974)", url: "" }
+        { title: "[Selections] Noise: The Political Economy of Music", author: "Attali (1985)", url: "" },
+        { title: "[Selections] Bach Senza Basso: About the Solo Works for Violin of Joh. Seb. Bach", author: "Bijlsma (2012)", url: "" }
       ],
-      extraReadings: [],
-      materials: [
-        { name: "Week 3 slides", kind: "slides", url: "files/w03-slides.pdf" },
-        { name: "Seminar handout — three angles", kind: "handout", url: "files/w03-handout.pdf" }
-      ],
-      assignment: { title: "Op-Ed #2 — The Future of Social Science Research", due: "Oct 30", url: "files/oped2-brief.pdf", note: "Op-ed + AI Process Log. AI-free checkpoint in seminar." }
+      extraReadings: [
+        { title: "The Soundscape of Modernity: Architectural Acoustics and the Culture of Listening in America, 1900–1933", author: "Thompson (2002)", url: "" },
+        { title: "Seashell Sound, Cabinet no. 48: 23–29", author: "Helmreich (2013)", url: "https://www.cabinetmagazine.org/issues/48/helmreich.php" }
+      ]
     },
     {
-      n: 4, date: "Sep 22", title: "Bias Is Not a Bug Report",
-      prompt: "If a model reproduces a society's inequalities faithfully, is it broken?",
-      presenters: [],
+      n: 5, label: "5", date: "16 Nov", title: "Staging Science",
+      note: "Visit to the Margravial Opera House.",
+      prompt: "", presenters: [],
       readings: [
-        { title: "Machine Bias", author: "Angwin et al. (2016)", url: "" },
-        { title: "Fairness and Abstraction in Sociotechnical Systems", author: "Selbst et al. (2019)", url: "" }
+        { title: "Give Me a Laboratory and I Will Raise the World, in Science Observed, 141–170", author: "Latour (1983)", url: "" },
+        { title: "Gebt mir ein Laboratorium und ich werde die Welt aus den Angeln heben, in ANThology, 103–34", author: "Latour (2006)", url: "" },
+        { title: "Opera as Social Showcase: Rituals of “Magic Mirrors” at the Margravial Opera House in Mid-Eighteenth-Century Bayreuth, Issues in Ethnology and Anthropology 11: 19–45", author: "Kotnik (2016)", url: "https://doi.org/10.21301/EAP.V11I1.1" }
       ],
-      materials: [], assignment: null
+      extraReadings: [
+        { title: "Laborstudien, in Science and Technology Studies. Eine sozialanthropologische Einführung, 145–71", author: "Amelang (2012)", url: "" }
+      ]
     },
     {
-      n: 5, date: "Sep 29", title: "Labour Behind the Curtain",
-      prompt: "Who does the invisible work that makes automation look automatic?",
-      presenters: [],
-      readings: [{ title: "Ghost Work — Introduction & Ch. 1", author: "Gray & Suri (2019)", url: "" }],
-      materials: [], assignment: null
+      n: 6, label: "6", date: "23 Nov", title: "Mechanical Production",
+      prompt: "", presenters: [],
+      readings: [
+        { title: "The Pencil of Nature (1844–46)", author: "Fox Talbot", url: "https://www.gutenberg.org/ebooks/33447" },
+        { title: "Tentacular Faces: Race and the Return of the Phenotype in Forensic Identification, American Anthropologist 122 (2): 369–80", author: "M’charek (2020)", url: "https://doi.org/10.1111/aman.13385" }
+      ],
+      extraReadings: [
+        { title: "On Photography", author: "Sontag (2020)", url: "" },
+        { title: "The Problem of Mechanization: Craft, Machines, and “Centering” in a Japanese Mingei Pottery Village, Journal of Material Culture 23 (2): 133–50", author: "Paredes (2018)", url: "https://doi.org/10.1177/1359183517725366" }
+      ]
     },
     {
-      n: 6, date: "Oct 6", title: "Simulated Subjects",
-      prompt: "Can a language model stand in for a survey respondent? Argue the strongest version of both answers.",
-      presenters: [],
-      readings: [{ title: "Out of One, Many: Using Language Models to Simulate Human Samples", author: "Argyle et al. (2023)", url: "" }],
-      materials: [], assignment: { title: "Research design memo", due: "Oct 9", url: "", note: "2 pages, no AI assistance." }
+      n: 7, label: "7", date: "30 Nov", title: "Does Technology Have Politics?",
+      prompt: "", presenters: [],
+      readings: [
+        { title: "Do Artifacts Have Politics?, Daedalus 109 (1): 121–36", author: "Winner (1980)", url: "" },
+        { title: "(Watch) Frank Uekötter im Interview zu seinem Buch „Atomare Demokratie“ (6:52)", author: "Franz Steiner Verlag (2022)", url: "https://www.youtube.com/watch?v=3o_bu7gtOdk" }
+      ],
+      extraReadings: [
+        { title: "How a Popular Medical Device Encodes Racial Bias, Boston Review, 2 Aug 2020", author: "Moran-Thomas (2020)", url: "http://bostonreview.net/science-nature-race/amy-moran-thomas-how-popular-medical-device-encodes-racial-bias" }
+      ]
     },
     {
-      n: 7, date: "Oct 13", title: "Measurement in the Age of Text",
-      prompt: "What becomes measurable that was not before, and what quietly stops being measured?",
-      presenters: [],
-      readings: [{ title: "Text as Data", author: "Grimmer & Stewart (2013)", url: "" }],
-      materials: [], assignment: null
+      n: 8, label: "8", date: "7 Dec", title: "Technology, Users, and Design",
+      prompt: "", presenters: [],
+      readings: [
+        { title: "The Berlin Key or How to Do Words with Things, in Matter, Materiality, and Modern Culture", author: "Latour (2000)", url: "" },
+        { title: "Der Berliner Schlüssel: Erkundungen eines Liebhabers der Wissenschaften", author: "Latour (1996)", url: "" },
+        { title: "Machines, Music, and the Quest for Fidelity: Marketing the Edison Phonograph in America, 1877–1925, The Musical Quarterly 79 (1): 131–71", author: "Thompson (1995)", url: "" }
+      ],
+      extraReadings: [
+        { title: "The De-Scription of Technical Objects, in Shaping Technology/Building Society, 205–24", author: "Akrich (1992)", url: "" },
+        { title: "How Users Matter: The Co-Construction of Users and Technology", author: "Oudshoorn & Pinch (2003)", url: "" }
+      ]
     },
     {
-      n: 8, date: "Oct 20", title: "Reading Week — no seminar",
-      prompt: "", presenters: [], readings: [], materials: [], assignment: null, off: true
+      n: 9, label: "9", date: "14 Dec", title: "Mechanical Reproduction",
+      prompt: "", presenters: [],
+      readings: [
+        { title: "The Work of Art in the Age of Mechanical Reproduction, in Illuminations, 217–251", author: "Benjamin (1935/1969)", url: "" }
+      ],
+      extraReadings: []
     },
     {
-      n: 9, date: "Oct 27", title: "Governance Without Consensus",
-      prompt: "Regulation is being written faster than the evidence base. What should a social scientist contribute?",
-      presenters: [],
-      readings: [{ title: "The EU AI Act — Titles I\u2013III (skim)", author: "European Parliament (2024)", url: "" }],
-      materials: [], assignment: { title: "Op-Ed #2 due", due: "Oct 30", url: "", note: "Submit on E-learning with your AI Process Log." }
+      n: 10, date: "21 Dec", title: "No class",
+      note: "Free time to work on your essay. Christmas, Hanukkah, Kwanzaa, Zartosht No-Diso, New Year, etc.",
+      prompt: "", presenters: [], readings: [], off: true
     },
     {
-      n: 10, date: "Nov 3", title: "Persuasion at Scale",
-      prompt: "If persuasion becomes cheap and personalised, what happens to public argument?",
-      presenters: [],
-      readings: [{ title: "On the Conversational Persuasiveness of LLMs", author: "Salvi et al. (2024)", url: "" }],
-      materials: [], assignment: null
+      n: 11, date: "28 Dec", title: "No class — winter break",
+      prompt: "", presenters: [], readings: [], off: true
     },
     {
-      n: 11, date: "Nov 10", title: "Work, Skill and the Middle",
-      prompt: "Which tasks are being hollowed out here, in this city, this year?",
-      presenters: [],
-      readings: [{ title: "Experimental Evidence on the Productivity Effects of Generative AI", author: "Noy & Zhang (2023)", url: "" }],
-      materials: [], assignment: null
+      n: 12, date: "4 Jan", title: "No class — winter break",
+      prompt: "", presenters: [], readings: [], off: true
     },
     {
-      n: 12, date: "Nov 17", title: "Field Methods with a Machine in the Room",
-      prompt: "Bring one method from your own project and stress-test it.",
-      presenters: [],
-      readings: [], materials: [], assignment: { title: "Final project proposal", due: "Nov 20", url: "", note: "One page + reading list." }
+      n: 13, label: "10", date: "11 Jan", title: "Decolonizing Technology",
+      prompt: "", presenters: [],
+      readings: [
+        { title: "The Problem with Annotation. Human Labour and Outsourcing between France and Madagascar, Big Data & Society 10 (2)", author: "Le Ludec, Cornet & Casilli (2023)", url: "https://doi.org/10.1177/20539517231188723" },
+        { title: "From Hoping to Expecting: Cochlear Implantation and Habilitation in India, Cultural Anthropology 37 (1): 125–49", author: "Friedner (2022)", url: "https://doi.org/10.14506/ca37.1.10" }
+      ],
+      extraReadings: [
+        { title: "Feminism, Postcolonialism, Technoscience, in The Handbook of Science and Technology Studies, 407–33", author: "Subramaniam, Foster, Harding, Roy & TallBear (2017)", url: "" },
+        { title: "Einführung: Postkoloniale STS, in Science and Technology Studies, 471–94", author: "Schramm (2017)", url: "" },
+        { title: "Postcolonial and Feminist Philosophies of Science and Technology: Convergences and Dissonances, Postcolonial Studies 12 (4): 401–21", author: "Harding (2009)", url: "" },
+        { title: "Provincializing STS: Postcoloniality, Symmetry, and Method, East Asian Science, Technology and Society 11 (2): 211–27", author: "Law & Lin (2017)", url: "" }
+      ]
     },
     {
-      n: 13, date: "Nov 24", title: "Student Symposium I",
-      prompt: "Six presentations, twelve minutes each, hard stop.",
-      presenters: [],
-      readings: [], materials: [], assignment: null
+      n: 14, label: "11", date: "18 Jan", title: "Gender and Musical Production in the Atomic Age",
+      prompt: "", presenters: [],
+      readings: [
+        { title: "Toward a Feminist Historiography of Electronic Music, in The Sound Studies Reader, 475–89", author: "Rodgers (2012)", url: "" }
+      ],
+      extraReadings: []
     },
     {
-      n: 14, date: "Dec 1", title: "Student Symposium II & Close",
-      prompt: "Remaining presentations, then what we would teach differently next year.",
-      presenters: [],
-      readings: [], materials: [],
-      assignment: { title: "Final project", due: "Dec 12", url: "", note: "Paper or op-ed portfolio + process log." }
+      n: 15, label: "12", date: "25 Jan", title: "(Artificially?) Intelligent Futures & Manifesto",
+      prompt: "", presenters: [],
+      readings: [
+        { title: "Virtually Shamans: An Anthropological Perspective on AI Chatbots, Anthropology of Consciousness 36 (2)", author: "Hau & Krause-Jensen (2025)", url: "https://doi.org/10.1111/anoc.70011" },
+        { title: "AI Decolonial Manyfesto", author: "Mohamed, Png, Isaac et al.", url: "https://manyfesto.ai/index.html" }
+      ],
+      extraReadings: [
+        { title: "A Cyborg Manifesto: Science, Technology, and Socialist-Feminism in the Late Twentieth Century, in Simians, Cyborgs, and Women", author: "Haraway (1991)", url: "" },
+        { title: "Declaration of Futurism, Poesia 5 (6)", author: "Marinetti (1909)", url: "https://bluemountain.princeton.edu/bluemtn/?a=d&d=bmtnaai190904-01.2.3" },
+        { title: "AI as Pharmakon, American Ethnologist 53 (2): 128–31", author: "Su (2026)", url: "https://doi.org/10.1111/amet.70086" },
+        { title: "Enacting AI Disclosure in Scholarly Publishing, American Ethnologist 53 (2): 132–35", author: "LaFlamme & Meyers (2026)", url: "https://doi.org/10.1111/amet.70084" },
+        { title: "Appropriation, Indigenous Knowledge, and Generative AI, American Ethnologist 53 (2): 125–27", author: "Menzies (hagwil hayetsk) (2026)", url: "https://doi.org/10.1111/amet.70081" },
+        { title: "AI as Guru or Conjurer?, American Ethnologist 53 (2): 136–41", author: "Timmer & Hermkens (2026)", url: "https://doi.org/10.1111/amet.70083" },
+        { title: "On Recognizing the Handiwork of AI, American Ethnologist 53 (2): 142–47", author: "Seaver (2026)", url: "https://doi.org/10.1111/amet.70062" }
+      ]
+    },
+    {
+      n: 16, label: "13", date: "1 Feb", title: "Conclusions and Feedback",
+      prompt: "", presenters: [],
+      readings: [],
+      extraReadings: []
     }
   ]
 };
