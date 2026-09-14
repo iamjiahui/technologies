@@ -190,10 +190,11 @@ Essays and the cumulative mark for the module will be graded according to §16 o
       prompt: "", presenters: [],
       readings: [
         { title: "Toward a Feminist Historiography of Electronic Music, in The Sound Studies Reader, 475–89", author: "Rodgers (2012)" }
-         { title: "Sexism Is a Feature, Not a Bug. In Your Computer Is on Fire, edited by Thomas S. Mullaney, Benjamin Peters, Mar Hicks, and Kavita Philip, 135–158. Cambridge, MA: MIT Press.", author: "Hicks (2021)"}
+        { title: "Sexism Is a Feature, Not a Bug. In Your Computer Is on Fire, edited by Thomas S. Mullaney, Benjamin Peters, Mar Hicks, and Kavita Philip, 135–158. Cambridge, MA: MIT Press", author: "Hicks (2021)" } 
       ],
       extraReadings: [
          { title: "When Computers Were Women. Technology and Culture 40 (3): 455–83", author: "Light (1999)"} 
+      ]
     },
     {
       n: 12, label: "12", date: "25 Jan", title: "(Artificially?) Intelligent Futures & Manifesto",
@@ -205,7 +206,7 @@ Essays and the cumulative mark for the module will be graded according to §16 o
       extraReadings: [
         { title: "A Cyborg Manifesto: Science, Technology, and Socialist-Feminism in the Late Twentieth Century, in Simians, Cyborgs, and Women", author: "Haraway (1991)" },
         { title: "Declaration of Futurism, Poesia 5 (6)", author: "Marinetti (1909)" },
-         { title: "Crip Technoscience Manifesto. Catalyst: Feminism, Theory, Technoscience 5 (1): 1–33", author: "Hamraie and Fritsch (2019)" },
+        { title: "Crip Technoscience Manifesto. Catalyst: Feminism, Theory, Technoscience 5 (1): 1–33", author: "Hamraie and Fritsch (2019)" },
         { title: "AI as Pharmakon, American Ethnologist 53 (2): 128–31", author: "Su (2026)" },
         { title: "Enacting AI Disclosure in Scholarly Publishing, American Ethnologist 53 (2): 132–35", author: "LaFlamme & Meyers (2026)" },
         { title: "Appropriation, Indigenous Knowledge, and Generative AI, American Ethnologist 53 (2): 125–27", author: "Menzies (hagwil hayetsk) (2026)" },
