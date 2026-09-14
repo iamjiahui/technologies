@@ -189,7 +189,7 @@ Essays and the cumulative mark for the module will be graded according to §16 o
       n: 11, label: "11", date: "18 Jan", title: "Gender and Musical Production in the Atomic Age",
       prompt: "", presenters: [],
       readings: [
-        { title: "Toward a Feminist Historiography of Electronic Music, in The Sound Studies Reader, 475–89", author: "Rodgers (2012)" }
+        { title: "Toward a Feminist Historiography of Electronic Music, in The Sound Studies Reader, 475–89", author: "Rodgers (2012)" },
         { title: "Sexism Is a Feature, Not a Bug. In Your Computer Is on Fire, edited by Thomas S. Mullaney, Benjamin Peters, Mar Hicks, and Kavita Philip, 135–158. Cambridge, MA: MIT Press", author: "Hicks (2021)" } 
       ],
       extraReadings: [
