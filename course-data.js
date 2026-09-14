@@ -191,7 +191,9 @@ Essays and the cumulative mark for the module will be graded according to §16 o
       readings: [
         { title: "Toward a Feminist Historiography of Electronic Music, in The Sound Studies Reader, 475–89", author: "Rodgers (2012)" }
       ],
-      extraReadings: []
+      extraReadings: [
+         {title: "Sexism Is a Feature, Not a Bug. In Your Computer Is on Fire, edited by Thomas S. Mullaney, Benjamin Peters, Mar Hicks, and Kavita Philip, 135–158. Cambridge, MA: MIT Press.", author: "Hicks (2021)"}
+      ]
     },
     {
       n: 12, label: "12", date: "25 Jan", title: "(Artificially?) Intelligent Futures & Manifesto",
