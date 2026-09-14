@@ -20,7 +20,7 @@ window.COURSE_DATA = {
 
 The seminar is an introduction to the field of Science and Technology Studies (STS). STS is dedicated to the social science analysis of the interplay between knowledge, technology and society. Technologies have not only made industrial society possible and shaped modernity, but are also closely linked to its excesses (e.g. environmental pollution, climate change, post-truth politics). Technologies also dominate and enrich our daily lives and social interactions.
 
-This semester (Winter 2026/7), the course is co-taught by an anthropologist of technology and a cultural historian of sound. Across the semester, we will trace these dynamics as much through the history and performance of sound as through computers and laboratories. We will ask how algorithms compute and shape musical taste; how instruments, recordings, and performance — from Bach’s solo violin works to the Edison phonograph’s pursuit of sonic “fidelity” — mediate what counts as musical authenticity. We explore the overlooked work of women in electronic music while examining science and technology themselves as staged and performative, from Latour’s laboratory theater to the Margravial Opera House here in Bayreuth. Finally, we consider how mechanical (re)production — in manuscript, print, photography, and code — has reshaped aesthetic judgment, authorship, and authenticity, from medieval scribes and early modern printing to Walter Benjamin’s reflections on art in the age of mechanical reproduction.
+This semester (Winter 2026/7), the course is co-taught by an anthropologist of technology and a cultural historian of sound. Across the semester, we will trace the dynamics between technology, society, and sound as much through the history and performance of sound as through computers and laboratories. We will ask how algorithms compute and shape musical taste; how instruments, recordings, and performance — from Bach’s solo violin works to the Edison phonograph’s pursuit of sonic “fidelity” — mediate what counts as musical authenticity. We explore the overlooked work of women in electronic music while examining science and technology themselves as staged and performative, from Latour’s laboratory theater to the Margravial Opera House here in Bayreuth. Finally, we consider how mechanical (re)production — in manuscript, print, photography, and code — has reshaped aesthetic judgment, authorship, and authenticity, from medieval scribes and early modern printing to Walter Benjamin’s reflections on art in the age of mechanical reproduction.
 
 Based on empirical case studies we will examine different theoretical and methodological approaches to the relationship between knowledge (science), technology and society. We will address the following questions, among others:
 
@@ -33,11 +33,7 @@ This seminar will be taught in English. Some texts are available in both German 
   /* Assignments — free text shown on the Start page. Line breaks are kept. */
   assignments: `Exam (Hausarbeit)
 
-As a textual form, manifestos have a long history of intervening in debates about technology and society — from technical communities issuing statements of principle, to critical and artistic responses like Donna Haraway's "A Cyborg Manifesto," which used the form to argue about the politics of human-machine relations rather than simply describe them, to F.T. Marinetti's "Manifesto of Futurism," which calls for the embrace of the modern machine age. A manifesto declares an ethical, political, or social position. We encourage you to experiment with this genre in the final exam.
-
-The final exam is a long-form essay (Hausarbeit) containing two sections. Section 1 requires you to write a manifesto. Section 2 requires you to explain the manifesto you wrote by reflecting on the themes of the course.
-
-Important information — following Para. 11, no. 8 of the Studien- und Prüfungsordnung (p. 10):
+As a textual form, manifestos have a long history of intervening in debates about technology and society — from technical communities issuing statements of principle, to critical and artistic responses like Donna Haraway's "A Cyborg Manifesto," which embraces the politics of technoscientific more-than-humans, to F.T. Marinetti’s “Manifesto of Futurism,” which calls for the embrace of the modern machine age. A manifesto declares an ethical, political, or social position. We encourage you to experiment with this genre in the final exam.
 • Section 1 should be maximum 3 pages.
 • Section 2 can be between 3–15 pages.
 • Your manifesto can be written in German or English. You are encouraged to write your reflection in English, and you are allowed to use large language models (LLM) for translation (with acknowledgement).
@@ -71,7 +67,7 @@ Essays and the cumulative mark for the module will be graded according to §16 o
     { date: "30 Apr", title: "Manifesto and Long-Form Essay Due - without feedback" }
   ],
   quickLinks: [
-    { label: "Syllabus (PDF)", url: "https://elearning.uni-bayreuth.de/mod/resource/view.php?id=1716158" },
+    { label: "Syllabus (PDF)", url: "files/Technologies_Syllabus_WiSe20262027.pdf" },
     { label: "E-learning site", url: "https://elearning.uni-bayreuth.de/course/view.php?id=48964" }
   ],
   weeks: [
