@@ -39,9 +39,9 @@ As a textual form, manifestos have a long history of intervening in debates abou
 • Your manifesto can be written in German or English. You are encouraged to write your reflection in English, and you are allowed to use large language models (LLM) for translation (with acknowledgement).
 • Due 30 March with feedback. Due 30 April without feedback.
 
-Section 1 (max. 3 pages): Write a manifesto on the student use of A.I. at the University of Bayreuth. Please take a clear position. You may take any position:
-• In favor — arguing for AI's expansion, adoption, or a particular use of it
-• Against — arguing for resistance, restriction, or rejection
+Section 1 (max. 3 pages): Write a manifesto on the student use of A.I. for creative projects at the University of Bayreuth. Please take a clear position. You may take any position:
+• In favor — arguing for AI's expansion, adoption, or a particular use of it in creative projects
+• Against — arguing for resistance, restriction, or rejection for creative purposes
 • Neither — refusing the binary, reframing the question, or making a different kind of argument (e.g. about who should control AI, or on what terms, rather than whether it should be used)
 
 Section 2 (3–15 pages): Reflect on the manifesto you just wrote, linking your reflections to readings and discussions from the course. Do not summarize — it is an analysis of why you wrote the manifesto the way you did and how it relates to what we've read and discussed this semester. Address some of these points:
