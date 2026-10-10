@@ -16,7 +16,7 @@ window.COURSE_DATA = {
   autoWeek: true,
   currentWeek: 1,
   /* Shown on the Description page. Line breaks are kept. */
-  description: `Mondays, 14–16h · Venue: S6 (GWII)
+  description: `Mondays, 14–16h · Venue: S5 (GWII)
 
 The seminar is an introduction to the field of Science and Technology Studies (STS). STS is dedicated to the social science analysis of the interplay between knowledge, technology and society. Technologies have not only made industrial society possible and shaped modernity, but are also closely linked to its excesses (e.g. environmental pollution, climate change, post-truth politics). Technologies also dominate and enrich our daily lives and social interactions.
 
